@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyServiceLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MyServiceLibrary.ExistUserException">
+            <summary>
+            Custom exception. Thrown when try to add user that have already added 
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.ExistUserException.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.ExistUserException.#ctor(System.String)">
+            <summary>
+            Constructor with exception message
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:MyServiceLibrary.ExistUserException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor with exception message and inner exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Inner exception</param>
+        </member>
+        <member name="T:MyServiceLibrary.DefaultUserException">
+            <summary>
+            Custom exception. Thrown when try to add user with default fields.
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.DefaultUserException.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.DefaultUserException.#ctor(System.String)">
+            <summary>
+            Constructor with exception message
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:MyServiceLibrary.DefaultUserException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor with exception message and inner exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Inner exception</param>
+        </member>
+        <member name="T:MyServiceLibrary.IService`1">
+            <summary>
+            Generic interface. It provides functions of service.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MyServiceLibrary.IService`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Method adds set of some items to service.
+            </summary>
+            <param name="items">Set of some items</param>
+        </member>
+        <member name="M:MyServiceLibrary.IService`1.Add(`0)">
+            <summary>
+            Method adds some item to service.
+            </summary>
+            <param name="item">Item</param>
+        </member>
+        <member name="M:MyServiceLibrary.IService`1.Delete(System.Predicate{`0})">
+            <summary>
+            Method removes items which matches the predicate. 
+            </summary>
+            <param name="predicate">Predicate</param>
+        </member>
+        <member name="M:MyServiceLibrary.IService`1.SearchDeferred(System.Func{`0,System.Boolean})">
+            <summary>
+            Method deferred returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.IService`1.Search(System.Func{`0,System.Boolean})">
+            <summary>
+            Method returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="T:MyServiceLibrary.UserService">
+            <summary>
+            Users service
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.#ctor(System.Func{System.Int32})">
+            <summary>
+            Constructor with entering of identifier generator 
+            </summary>
+            <param name="idGenerator">Identifier generator</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.Add(System.Collections.Generic.IEnumerable{MyServiceLibrary.User})">
+            <summary>
+            Method insert users into set
+            </summary>
+            <param name="users">Users to add</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.Add(MyServiceLibrary.User)">
+            <summary>
+            Method insert user into set
+            </summary>
+            <param name="user">User to add</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.Delete(System.Predicate{MyServiceLibrary.User})">
+            <summary>
+            Method remove all user which matches the predicate.  
+            </summary>
+            <param name="predicate">Predicate</param>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.SearchDeferred(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            Method deferred returns users which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Users which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.UserService.Search(System.Func{MyServiceLibrary.User,System.Boolean})">
+            <summary>
+            Method returns users which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Users which matches the predicate</returns>
+        </member>
+        <member name="T:MyServiceLibrary.User">
+            <summary>
+            User entity
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.Id">
+            <summary>
+            User's identifier
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.FirstName">
+            <summary>
+            User's first name
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.LastName">
+            <summary>
+            User's last name
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.User.DateOfBirth">
+            <summary>
+            User's date of birth
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.User.op_Equality(MyServiceLibrary.User,MyServiceLibrary.User)">
+            <summary>
+            Operator compares users by value
+            </summary>
+            <param name="a">User a</param>
+            <param name="b">User b</param>
+            <returns>True if users are equal</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.op_Inequality(MyServiceLibrary.User,MyServiceLibrary.User)">
+            <summary>
+            Operator compares users by value
+            </summary>
+            <param name="x">User a</param>
+            <param name="y">User b</param>
+            <returns>True if users aren't equal</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.Equals(System.Object)">
+            <summary>
+            Method compares this and entered user by value
+            </summary>
+            <param name="obj">second user</param>
+            <returns>True if users are equal</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.GetHashCode">
+            <summary>
+            Method returns unique hash number for current user
+            </summary>
+            <returns>Hash number</returns>
+        </member>
+        <member name="M:MyServiceLibrary.User.ToString">
+            <summary>
+            Methods convert user to string and returns it
+            </summary>
+            <returns>result string</returns>
+        </member>
+    </members>
+</doc>

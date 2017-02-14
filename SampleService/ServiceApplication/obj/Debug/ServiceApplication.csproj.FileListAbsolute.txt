@@ -1,0 +1,17 @@
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\bin\Debug\ServiceApplication.exe.config
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\obj\Debug\ServiceApplication.csprojResolveAssemblyReference.cache
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\bin\Debug\ServiceApplication.exe
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\bin\Debug\ServiceApplication.pdb
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.dll
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.pdb
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\obj\Debug\ServiceApplication.exe
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\ServiceApplication\obj\Debug\ServiceApplication.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\ServiceApplication.exe.config
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\obj\Debug\ServiceApplication.exe
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\obj\Debug\ServiceApplication.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\ServiceApplication.exe
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\ServiceApplication.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.xml
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\obj\Debug\ServiceApplication.csprojResolveAssemblyReference.cache

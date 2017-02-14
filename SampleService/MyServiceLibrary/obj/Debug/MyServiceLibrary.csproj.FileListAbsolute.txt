@@ -1,0 +1,11 @@
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+F:\EPAM\Тренинги\dotnetbasics-master\Day1\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.XML
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
