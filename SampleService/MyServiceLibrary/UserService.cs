@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using MyServiceLibrary.Helpers;
 
 namespace MyServiceLibrary
 {
@@ -64,8 +65,7 @@ namespace MyServiceLibrary
                 throw new ArgumentNullException(nameof(user));
             }
 
-            var u = new User();
-            if (user.Equals(u))
+            if (CheckDefaultValues.Check(user))
             {
                 throw new DefaultUserException(nameof(user));
             }

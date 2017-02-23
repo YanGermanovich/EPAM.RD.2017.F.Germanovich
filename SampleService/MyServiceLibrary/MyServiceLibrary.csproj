@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="CustomExceptions\ExistUserException.cs" />
     <Compile Include="CustomExceptions\DefaultUserException.cs" />
+    <Compile Include="Helpers\CheckDefaultValueAttribute.cs" />
+    <Compile Include="Helpers\CheckDefaultValues.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

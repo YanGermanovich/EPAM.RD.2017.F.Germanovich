@@ -1,4 +1,5 @@
 ﻿using System;
+using MyServiceLibrary.Helpers;
 
 namespace MyServiceLibrary
 {
@@ -15,16 +16,19 @@ namespace MyServiceLibrary
         /// <summary>
         /// User's first name
         /// </summary>
+        [CheckDefaultValue]
         public string FirstName { get; set; }
 
         /// <summary>
         /// User's last name
         /// </summary>
+        [CheckDefaultValue]
         public string LastName { get; set; }
 
         /// <summary>
         /// User's date of birth
         /// </summary>
+        [CheckDefaultValue]
         public DateTime DateOfBirth { get; set; }
 
         /// <summary>

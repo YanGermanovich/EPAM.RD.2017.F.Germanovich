@@ -50,6 +50,24 @@
             <param name="message">Exception message</param>
             <param name="inner">Inner exception</param>
         </member>
+        <member name="T:MyServiceLibrary.Helpers.CheckDefaultValueAttribute">
+            <summary>
+            Property has attribute when it should be checked on default value
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.Helpers.CheckDefaultValues">
+            <summary>
+            Class checks all properties of item on default value
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Helpers.CheckDefaultValues.Check``1(``0)">
+            <summary>
+            Mehod checks all properties of item on default value
+            </summary>
+            <typeparam name="T">Type of item</typeparam>
+            <param name="item">Item to check</param>
+            <returns>True if item have one or more property with default value</returns>
+        </member>
         <member name="T:MyServiceLibrary.IService`1">
             <summary>
             Generic interface. It provides functions of service.

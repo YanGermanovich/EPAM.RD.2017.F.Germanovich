@@ -38,7 +38,11 @@ namespace MyServiceLibrary.Tests
         public void Add_DefaultUser_ExceptionThrown()
         {
             var service = new UserService();
-            var us = new User();
+            var us = new User()
+            {
+                FirstName = "Ivan",
+                LastName = "Ivanov"
+            };
             service.Add(us);
         }
 
