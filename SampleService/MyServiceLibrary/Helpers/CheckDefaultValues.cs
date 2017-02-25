@@ -23,8 +23,7 @@ namespace MyServiceLibrary.Helpers
         {
             TypeInfo metaData = typeof(T).GetTypeInfo();
             bool isDefault = false;
-
-            IEnumerator enumerator = (metaData.GetProperties()).GetEnumerator();
+            IEnumerator enumerator = metaData.GetProperties().GetEnumerator();
             try
             {
                 while (!isDefault && enumerator.MoveNext())
@@ -34,15 +33,19 @@ namespace MyServiceLibrary.Helpers
                     {
                         Type propType = element.PropertyType;
                         var defaultValue = propType.IsValueType ? Activator.CreateInstance(propType) : null;
-                        isDefault = Object.Equals(element.GetValue(item),defaultValue);
+                        isDefault = object.Equals(element.GetValue(item), defaultValue);
                     }
                 }
             }
             finally
             {
                 IDisposable disposable = enumerator as IDisposable;
-                if (disposable != null) disposable.Dispose();
+                if (disposable != null)
+                {
+                    disposable.Dispose();
+                }
             }
+
             return isDefault;
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using MyServiceLibrary.Helpers;
 
-namespace MyServiceLibrary
+namespace MyServiceLibrary.Implementation
 {
     /// <summary>
     /// User entity
