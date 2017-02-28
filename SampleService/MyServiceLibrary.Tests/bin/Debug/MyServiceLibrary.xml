@@ -95,7 +95,7 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.#ctor(System.Predicate{`0})">
+        <member name="M:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.#ctor(System.Linq.Expressions.Expression{System.Predicate{`0}})">
             <summary>
             Constructor with entering predicate for deleting
             </summary>
@@ -152,6 +152,13 @@
             <param name="fileName">File name</param>
             <param name="obj">Object to serialize</param>
         </member>
+        <member name="M:MyServiceLibrary.Implementation.XmlSerializeProvider`1.Deserialize(System.String,System.Type[])">
+            <summary>
+            Method deserializes obj from the file
+            </summary>
+            <param name="fileName">File name</param>
+            <param name="extraTypes">Extra types</param>
+        </member>
         <member name="T:MyServiceLibrary.Implementation.ServiceServer`1">
             <summary>
             Server of user service
@@ -159,14 +166,27 @@
         </member>
         <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor">
             <summary>
-            Default constructor. Default count of slaves is 5
+            Default constructor
             </summary>
         </member>
         <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(System.Func{System.Int32})">
             <summary>
-            Constructor with enering count of saves and id generator
+            Constructor with entering\ id generator
             </summary>
             <param name="idGenerator">Identifier generator</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(System.Func{System.Int32},MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+            <summary>
+            Constructor with entering serializer and id generator
+            </summary>
+            <param name="idGenerator">Identifier generator</param>
+            <param name="serializerProvider">Serialization provider</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+            <summary>
+            Constructor with entering serializer
+            </summary>
+            <param name="serializerProvider">Serialization provider</param>
         </member>
         <member name="P:MyServiceLibrary.Implementation.ServiceServer`1.Master">
             <summary>
@@ -239,20 +259,20 @@
             </summary>
             <param name="user">User to add</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.Delete(System.Predicate{MyServiceLibrary.Implementation.User})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Delete(System.Linq.Expressions.Expression{System.Predicate{MyServiceLibrary.Implementation.User}})">
             <summary>
             Method remove all user which matches the predicate.  
             </summary>
             <param name="predicate">Predicate</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.SearchDeferred(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.SearchDeferred(System.Linq.Expressions.Expression{System.Func{MyServiceLibrary.Implementation.User,System.Boolean}})">
             <summary>
             Method deferred returns users which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Users which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.Search(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Search(System.Linq.Expressions.Expression{System.Func{MyServiceLibrary.Implementation.User,System.Boolean}})">
             <summary>
             Method returns users which matches the predicate
             </summary>
@@ -363,6 +383,13 @@
             <param name="fileName">Object will be serialize in this file</param>
             <param name="obj">Object to serialize</param>
         </member>
+        <member name="M:MyServiceLibrary.Interfaces.ISerializerProvider`1.Deserialize(System.String,System.Type[])">
+            <summary>
+            Methods deserialize object from the file
+            </summary>
+            <param name="fileName">Object will be serialize in this file</param>
+            <param name="extraTypes">Extra Types</param>
+        </member>
         <member name="T:MyServiceLibrary.Interfaces.IService`1">
             <summary>
             Generic interface. It provides functions of service.
@@ -386,20 +413,20 @@
             </summary>
             <param name="item">Item</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Delete(System.Predicate{`0})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.Delete(System.Linq.Expressions.Expression{System.Predicate{`0}})">
             <summary>
             Method removes items which matches the predicate. 
             </summary>
             <param name="predicate">Predicate</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.SearchDeferred(System.Func{`0,System.Boolean})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.SearchDeferred(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Method deferred returns items which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Items which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Search(System.Func{`0,System.Boolean})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.Search(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
             Method returns items which matches the predicate
             </summary>

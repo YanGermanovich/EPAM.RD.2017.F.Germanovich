@@ -15,3 +15,8 @@ D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.pdb
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\MyServiceLibrary.xml
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\obj\Debug\ServiceApplication.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\NLog.config
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\LoggerSingleton.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\NLog.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\LoggerSingleton.pdb
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\ServiceApplication\bin\Debug\NLog.xml

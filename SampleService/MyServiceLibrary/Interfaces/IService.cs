@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using MyServiceLibrary.Implementation;
 
 namespace MyServiceLibrary.Interfaces
@@ -35,21 +36,21 @@ namespace MyServiceLibrary.Interfaces
         /// Method removes items which matches the predicate. 
         /// </summary>
         /// <param name="predicate">Predicate</param>
-        void Delete(Predicate<T> predicate);
+        void Delete(Expression<Predicate<T>> predicate);
 
         /// <summary>
         /// Method deferred returns items which matches the predicate
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Items which matches the predicate</returns>
-        IEnumerable<T> SearchDeferred(Func<T, bool> predicate);
+        IEnumerable<T> SearchDeferred(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Method returns items which matches the predicate
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Items which matches the predicate</returns>
-        List<T> Search(Func<T, bool> predicate);
+        List<T> Search(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Method serialize actual state using current serializer

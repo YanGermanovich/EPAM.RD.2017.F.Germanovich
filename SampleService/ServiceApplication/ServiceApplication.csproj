@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -49,8 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LoggerSingleton\LoggerSingleton.csproj">
+      <Project>{a973ce9a-2858-49b0-8d07-b7a23d0855d6}</Project>
+      <Name>LoggerSingleton</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyServiceLibrary\MyServiceLibrary.csproj">
       <Project>{83615058-2919-4ca9-84c2-5368cef9f281}</Project>
       <Name>MyServiceLibrary</Name>

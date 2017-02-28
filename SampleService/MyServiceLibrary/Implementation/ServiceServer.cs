@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using MyServiceLibrary.Interfaces;
 using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Xml.Serialization;
+using LoggerSingleton;
+using MyServiceLibrary.Interfaces;
 
 namespace MyServiceLibrary.Implementation
 {
@@ -12,27 +16,48 @@ namespace MyServiceLibrary.Implementation
            where T : IService<User>
     {
         /// <summary>
-        /// Default constructor. Default count of slaves is 5
+        /// Default constructor
         /// </summary>
         public ServiceServer()
         {
             this.Master = (T)Activator.CreateInstance(typeof(T), ServiceRoles.Master);
+
             this.CreateHelper();
         }
 
         /// <summary>
-        /// Constructor with enering count of saves and id generator
+        /// Constructor with entering\ id generator
         /// </summary>
         /// <param name="idGenerator">Identifier generator</param>
         public ServiceServer(Func<int> idGenerator)
         {
             if (idGenerator == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(idGenerator)}");
                 throw new ArgumentNullException(nameof(idGenerator));
             }
 
             this.Master = (T)Activator.CreateInstance(typeof(T), idGenerator, ServiceRoles.Master);
             this.CreateHelper();
+        }
+
+        /// <summary>
+        /// Constructor with entering serializer and id generator
+        /// </summary>
+        /// <param name="idGenerator">Identifier generator</param>
+        /// <param name="serializerProvider">Serialization provider</param>
+        public ServiceServer(Func<int> idGenerator, ISerializerProvider<User[]> serializerProvider) : this(idGenerator)
+        {
+            this.InitializeCollection(serializerProvider);
+        }
+
+        /// <summary>
+        /// Constructor with entering serializer
+        /// </summary>
+        /// <param name="serializerProvider">Serialization provider</param>
+        public ServiceServer(ISerializerProvider<User[]> serializerProvider) : this()
+        {
+            this.InitializeCollection(serializerProvider);
         }
 
         /// <summary>
@@ -47,6 +72,12 @@ namespace MyServiceLibrary.Implementation
 
         private void CreateHelper()
         {
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains("SlavesCount"))
+            {
+                NlogLogger.Logger.Error($"No slaves count in App.config");
+                throw new ArgumentNullException("Please add slaves count into App.config");
+            }
+
             int count = Convert.ToInt32(ConfigurationManager.AppSettings["SlavesCount"]);
             if (count < 0)
             {
@@ -59,7 +90,33 @@ namespace MyServiceLibrary.Implementation
                 slaves.Add(new UserService(this.Master as UserService));
             }
 
-            this.Slaves = slaves; 
+            this.Slaves = slaves;
+        }
+
+        private void InitializeCollection(ISerializerProvider<User[]> serializerProvider)
+        {
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains("FileName"))
+            {
+                NlogLogger.Logger.Error("No file name");
+                throw new ArgumentNullException("Please add file name into App.config");
+            }
+
+            string fileName = ConfigurationManager.AppSettings["FileName"].ToString();
+
+            if (fileName == string.Empty)
+            {
+                NlogLogger.Logger.Error("Empry file name");
+                throw new ArgumentException("File name must not be empty!");
+            }
+
+            User[] users = serializerProvider.Deserialize(fileName, null);
+            if (users != null)
+            {
+                foreach (User us in users)
+                {
+                    this.Master.Add(us);
+                }
+            }
         }
     }
 }

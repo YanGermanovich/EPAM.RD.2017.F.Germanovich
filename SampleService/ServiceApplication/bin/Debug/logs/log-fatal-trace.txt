@@ -1,0 +1,1 @@
+28.02.2017 13:45:50|Exist user error. User Germanovich Yan 04.07.1998 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper

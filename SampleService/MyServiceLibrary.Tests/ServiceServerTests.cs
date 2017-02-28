@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyServiceLibrary.Implementation;
-using MyServiceLibrary.Interfaces;
 
 namespace MyServiceLibrary.Tests
 {
@@ -14,14 +13,24 @@ namespace MyServiceLibrary.Tests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Create_WhithNegativeCount_ExceptionThrown()
         {
-            var server = new ServiceServer<UserService>();
+            ConfigurationManager.AppSettings.Set("SlavesCount", "-1");
+            try
+            {
+                var server = new ServiceServer<UserService>();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                ConfigurationManager.AppSettings.Set("SlavesCount", "3");
+                throw;
+            }
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Create_WhithNullGenerator_ExceptionThrown()
         {
-            var server = new ServiceServer<UserService>(null);
+            Func<int> idGen = null;
+            var server = new ServiceServer<UserService>(idGen);
         }
 
         [TestMethod]

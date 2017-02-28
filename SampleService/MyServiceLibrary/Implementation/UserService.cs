@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Linq.Expressions;
+using LoggerSingleton;
 using MyServiceLibrary.CustomExceptions;
 using MyServiceLibrary.EventArguments;
 using MyServiceLibrary.Helpers;
 using MyServiceLibrary.Interfaces;
-using System.Configuration;
 
 namespace MyServiceLibrary.Implementation
 {
@@ -34,6 +36,7 @@ namespace MyServiceLibrary.Implementation
         {
             if (idGenerator == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(idGenerator)}");
                 throw new ArgumentNullException(nameof(idGenerator));
             }
 
@@ -59,14 +62,16 @@ namespace MyServiceLibrary.Implementation
         {
             if (master == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(master)}");
                 throw new ArgumentNullException(nameof(master));
             }
 
-            if (!master.CheckPermission())
+            if (master.CheckPermission(ServiceRoles.Master))
             {
                 throw new AccesPermissionException();
             }
 
+            this.Role = ServiceRoles.Slave;
             master.AddUser += this.AddItems;
             master.DeleteUser += this.DeleteItems;
             this.IdGenerator = (Func<int>)master.IdGenerator.Clone();
@@ -110,13 +115,14 @@ namespace MyServiceLibrary.Implementation
         /// <param name="users">Users to add</param>
         public void Add(IEnumerable<User> users)
         {
-            if (!this.CheckPermission())
+            if (this.CheckPermission(ServiceRoles.Master))
             {
                 throw new AccesPermissionException();
             }
 
-            if (this.users == null)
+            if (users == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(users)}");
                 throw new ArgumentNullException(nameof(users));
             }
         }
@@ -127,7 +133,7 @@ namespace MyServiceLibrary.Implementation
         /// <param name="user">User to add</param>
         public void Add(User user)
         {
-            if (!this.CheckPermission())
+            if (this.CheckPermission(ServiceRoles.Master))
             {
                 throw new AccesPermissionException();
             }
@@ -139,7 +145,7 @@ namespace MyServiceLibrary.Implementation
         /// Method remove all user which matches the predicate.  
         /// </summary>
         /// <param name="predicate">Predicate</param>
-        public void Delete(Predicate<User> predicate)
+        public void Delete(Expression<Predicate<User>> predicate)
         {
             this.DeleteHelper(predicate);
         }
@@ -149,14 +155,17 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Users which matches the predicate</returns>
-        public IEnumerable<User> SearchDeferred(Func<User, bool> predicate)
+        public IEnumerable<User> SearchDeferred(Expression<Func<User, bool>> predicate)
         {
             if (predicate == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(predicate)}");
                 throw new ArgumentNullException(nameof(predicate));
             }
 
-            return this.users.Where(predicate);
+            NlogLogger.Logger.Info($"Users was searched by this predicate : {predicate}");
+
+            return this.users.Where(predicate.Compile());
         }
 
         /// <summary>
@@ -164,7 +173,7 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Users which matches the predicate</returns>
-        public List<User> Search(Func<User, bool> predicate)
+        public List<User> Search(Expression<Func<User, bool>> predicate)
         {
             return this.SearchDeferred(predicate).ToList();
         }
@@ -177,22 +186,25 @@ namespace MyServiceLibrary.Implementation
         {
             if (serializer == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(serializer)}");
                 throw new ArgumentNullException(nameof(serializer));
             }
 
-            string fileName = ConfigurationManager.AppSettings["FileName"].ToString(); 
-
-            if (fileName == null)
+            if (!ConfigurationManager.AppSettings.AllKeys.Contains("FileName"))
             {
-                throw new ArgumentNullException(nameof(fileName));
+                NlogLogger.Logger.Error("No file name");
+                throw new ArgumentNullException("Please add file name into App.config");
             }
+
+            string fileName = ConfigurationManager.AppSettings["FileName"].ToString();
 
             if (fileName == string.Empty)
             {
+                NlogLogger.Logger.Error("Empry file name");
                 throw new ArgumentException("File name must not be empty!");
             }
 
-            if (!this.CheckPermission())
+            if (this.CheckPermission(ServiceRoles.Master))
             {
                 throw new AccesPermissionException();
             }
@@ -214,6 +226,11 @@ namespace MyServiceLibrary.Implementation
             {
                 this.AddUser(this, e);
             }
+
+            foreach (User us in e.ItemsToAdd)
+            {
+                NlogLogger.Logger.Info($"User {us.FirstName} {us.LastName} added");
+            }
         }
 
         /// <summary>
@@ -226,21 +243,27 @@ namespace MyServiceLibrary.Implementation
             {
                 this.DeleteUser(this, e);
             }
+            NlogLogger.Logger.Info($"Users deleted by this predicate : {e.Predicate}");
         }
 
         #endregion
 
         #region Private Methods
-
         private void InitializeGenerator()
         {
             int id = 0;
             this.IdGenerator += () => { return id++; };
         }
 
-        private bool CheckPermission()
+        private bool CheckPermission(ServiceRoles role)
         {
-            return this.Role == ServiceRoles.Master;
+            if (this.Role == role)
+            {
+                return false;
+            }
+
+            NlogLogger.Logger.Warn($"{this.Role} service tried get access as {role}");
+            return true;
         }
 
         /// <summary>
@@ -273,7 +296,7 @@ namespace MyServiceLibrary.Implementation
                 this.AddHelper(user);
             }
 
-            if (this.CheckPermission())
+            if (this.Role == ServiceRoles.Master)
             {
                 this.OnAddUser(new AddItemEventArgs<User>(users));
             }
@@ -283,33 +306,41 @@ namespace MyServiceLibrary.Implementation
         {
             if (user == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(user)}");
                 throw new ArgumentNullException(nameof(user));
             }
 
             if (CheckDefaultValues.Check(user))
             {
+                NlogLogger.Logger.Fatal($"User values cannot be default. Usrt : {user.ToString()}");
                 throw new DefaultUserException(nameof(user));
             }
 
             if (this.users.Contains(user))
             {
+                NlogLogger.Logger.Fatal($"Exist user error. User {user.ToString()} is already exist");
                 throw new ExistUserException();
             }
 
-            user.Id = this.IdGenerator();
+            if (this.Role == ServiceRoles.Master)
+            {
+                user.Id = this.IdGenerator();
+            }
+
             this.users.Add(user);
         }
 
-        private void DeleteHelper(Predicate<User> predicate)
+        private void DeleteHelper(Expression<Predicate<User>> predicate)
         {
             if (predicate == null)
             {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(predicate)}");
                 throw new ArgumentNullException(nameof(predicate));
             }
 
-            this.users.RemoveAll(predicate);
+            this.users.RemoveAll(predicate.Compile());
 
-            if (this.CheckPermission())
+            if (this.Role == ServiceRoles.Master)
             {
                 this.OnDeleteUser(new DeleteItemEventArgs<User>(predicate));
             }

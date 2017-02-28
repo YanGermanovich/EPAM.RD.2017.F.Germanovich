@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyServiceLibrary.CustomExceptions;
@@ -156,17 +157,7 @@ namespace MyServiceLibrary.Tests
             };
 
             service.Add(us);
-            service.Delete((user) =>
-            {
-                int YearsPassed = DateTime.Now.Year - user.DateOfBirth.Year;
-                if (DateTime.Now.Month < user.DateOfBirth.Month || (DateTime.Now.Month == user.DateOfBirth.Month &&
-                        DateTime.Now.Day < user.DateOfBirth.Day))
-                {
-                    YearsPassed--;
-                }
-
-                return YearsPassed >= 18;
-            });
+            service.Delete((user) => user.DateOfBirth >= new DateTime(1999, 28, 02));
         }
 
         [TestMethod]
@@ -182,17 +173,7 @@ namespace MyServiceLibrary.Tests
             };
 
             service.Add(us);
-            service.Delete((user) =>
-            {
-                int YearsPassed = DateTime.Now.Year - user.DateOfBirth.Year;
-                if (DateTime.Now.Month < user.DateOfBirth.Month || (DateTime.Now.Month == user.DateOfBirth.Month &&
-                        DateTime.Now.Day < user.DateOfBirth.Day))
-                {
-                    YearsPassed--;
-                }
-
-                return YearsPassed >= 18;
-            });
+            service.Delete((user) => user.DateOfBirth >= new DateTime(1999, 28, 02));
         }
 
         #endregion
@@ -278,7 +259,7 @@ namespace MyServiceLibrary.Tests
         #endregion
 
         #region Serialize
-        
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Serialize_NullProvider_ExceptionThrown()
@@ -300,7 +281,21 @@ namespace MyServiceLibrary.Tests
         public void Serialize_NullFileName_ExceptionThrown()
         {
             var service = new UserService(ServiceRoles.Master);
-            service.SerializeState(new XmlSerializeProvider<User[]>());
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings.Remove("FileName");
+            config.Save(ConfigurationSaveMode.Modified, true);
+            ConfigurationManager.RefreshSection("appSettings");
+            try
+            {
+                service.SerializeState(new XmlSerializeProvider<User[]>());
+            }
+            catch (ArgumentNullException)
+            {
+                config.AppSettings.Settings.Add("FileName", "users.xml");
+                config.Save(ConfigurationSaveMode.Modified, true);
+                ConfigurationManager.RefreshSection("appSettings");
+                throw;
+            }
         }
 
         [TestMethod]
@@ -308,7 +303,16 @@ namespace MyServiceLibrary.Tests
         public void Serialize_EmptyFileName_ExceptionThrown()
         {
             var service = new UserService(ServiceRoles.Master);
-            service.SerializeState(new XmlSerializeProvider<User[]>());
+            ConfigurationManager.AppSettings.Set("FileName", string.Empty);
+            try
+            {
+                service.SerializeState(new XmlSerializeProvider<User[]>());
+            }
+            catch (ArgumentException)
+            {
+                ConfigurationManager.AppSettings.Set("FileName", "users.xml");
+                throw;
+            }
         }
 
         #endregion

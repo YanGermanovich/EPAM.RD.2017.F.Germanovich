@@ -9,7 +9,7 @@ namespace MyServiceLibrary.Interfaces
     /// <summary>
     /// Interface provide function of serializer
     /// </summary>
-    public interface ISerializerProvider<in T>
+    public interface ISerializerProvider<T>
     {
         /// <summary>
         /// Methods serialize object in the file
@@ -17,5 +17,12 @@ namespace MyServiceLibrary.Interfaces
         /// <param name="fileName">Object will be serialize in this file</param>
         /// <param name="obj">Object to serialize</param>
         void Serialize(string fileName, T obj);
+
+        /// <summary>
+        /// Methods deserialize object from the file
+        /// </summary>
+        /// <param name="fileName">Object will be serialize in this file</param>
+        /// <param name="extraTypes">Extra Types</param>
+        T Deserialize(string fileName, Type[] extraTypes);
     }
 }

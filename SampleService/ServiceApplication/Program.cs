@@ -4,6 +4,7 @@ using System.Linq;
 using MyServiceLibrary.Implementation;
 
 using static System.Console;
+using LoggerSingleton;
 
 namespace ServiceApplication
 {
@@ -12,25 +13,10 @@ namespace ServiceApplication
         public static void Main(string[] args)
         {
             int i = 0;
-            var server = new ServiceServer<UserService> (() =>
-            {
-                i += 2;
-                return i;
-            });
+            var server = new ServiceServer<UserService>(
+                                                        () => { i += 1; return i; },
+                                                        new XmlSerializeProvider<User[]>());
 
-            server.Master.Add(new User()
-            {
-                DateOfBirth = new DateTime(1997, 10, 14),
-                FirstName = "Ivan",
-                LastName = "Ivanov"
-            });
-
-            server.Master.Add(new User()
-            {
-                DateOfBirth = new DateTime(1998, 7, 4),
-                FirstName = "Yan",
-                LastName = "Germanovich"
-            });
 
             var search_byFirstName_deferred = server.Slaves.ElementAt(0).SearchDeferred((user) => user.FirstName == "Ivan");
             var search_byFirstName = server.Slaves.ElementAt(2).Search((user) => user.FirstName == "Ivan");
@@ -46,6 +32,8 @@ namespace ServiceApplication
             Output(search_byLastName, "Search users by last name");
 
             server.Master.SerializeState(new XmlSerializeProvider<User[]>());
+
+            server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
 
             ReadKey();
 

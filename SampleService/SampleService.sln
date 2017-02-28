@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceApplication", "ServiceApplication\ServiceApplication.csproj", "{DBB45675-D296-43BE-85ED-A05E8DE614E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyServiceLibrary", "MyServiceLibrary\MyServiceLibrary.csproj", "{83615058-2919-4CA9-84C2-5368CEF9F281}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyServiceLibrary.Tests", "MyServiceLibrary.Tests\MyServiceLibrary.Tests.csproj", "{9A6C785F-F746-4392-89EF-C133C6FF80F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerSingleton", "LoggerSingleton\LoggerSingleton.csproj", "{A973CE9A-2858-49B0-8D07-B7A23D0855D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9A6C785F-F746-4392-89EF-C133C6FF80F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6C785F-F746-4392-89EF-C133C6FF80F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6C785F-F746-4392-89EF-C133C6FF80F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A973CE9A-2858-49B0-8D07-B7A23D0855D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A973CE9A-2858-49B0-8D07-B7A23D0855D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A973CE9A-2858-49B0-8D07-B7A23D0855D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A973CE9A-2858-49B0-8D07-B7A23D0855D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

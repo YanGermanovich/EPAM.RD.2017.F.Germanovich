@@ -1,0 +1,37 @@
+Info|28.02.2017 13:36:00|ssadasdasdasd
+Info|28.02.2017 13:36:00|User Yan Germanovich added
+Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:00|Users deleted by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:36:40|ssadasdasdasd
+Info|28.02.2017 13:36:40|User Yan Germanovich added
+Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:40|Users deleted by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:38:43|ssadasdasdasd
+Info|28.02.2017 13:40:01|User Yan Germanovich added
+Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:01|Users deleted by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:40:01|Users was searched by this predicate : us => True
+Info|28.02.2017 13:40:18|User Yan Germanovich added
+Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:18|Users deleted by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:40:22|Users was searched by this predicate : us => True
+Info|28.02.2017 13:45:43|User Yan Germanovich added
+Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:45:44|Users deleted by this predicate : user => (user.FirstName == "Ivan")
+Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.LastName == "Germanovich")
+Info|28.02.2017 13:45:50|Users was searched by this predicate : us => True
+Fatal|28.02.2017 13:45:50|Exist user error. User Germanovich Yan 04.07.1998 is already exist
