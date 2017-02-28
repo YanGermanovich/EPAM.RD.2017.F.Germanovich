@@ -13,13 +13,13 @@ namespace MyServiceLibrary.EventArguments
     /// <typeparam name="T"></typeparam>
     public class DeleteItemEventArgs<T> : EventArgs
     {
-        private readonly Expression<Predicate<T>> predicate;
+        private readonly Predicate<T> predicate;
 
         /// <summary>
         /// Constructor with entering predicate for deleting
         /// </summary>
         /// <param name="predicate">predicate for deleting</param>
-        public DeleteItemEventArgs(Expression<Predicate<T>> predicate)
+        public DeleteItemEventArgs(Predicate<T> predicate)
         {
             this.predicate = predicate;
         }
@@ -27,8 +27,8 @@ namespace MyServiceLibrary.EventArguments
         /// <summary>
         /// Property of predicate for deleting
         /// </summary>
-        public Expression<Predicate<T>> Predicate
-        {
+        public Predicate<T> Predicate
+        { 
             get { return this.predicate; }
         }
     }

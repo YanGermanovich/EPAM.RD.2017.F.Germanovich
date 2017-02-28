@@ -95,7 +95,7 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.#ctor(System.Linq.Expressions.Expression{System.Predicate{`0}})">
+        <member name="M:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.#ctor(System.Predicate{`0})">
             <summary>
             Constructor with entering predicate for deleting
             </summary>
@@ -198,6 +198,22 @@
             Property returns master entity
             </summary>
         </member>
+        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Dispose">
+            <summary>
+            Method unload all domains
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Dispose(System.Boolean)">
+            <summary>
+            Method unload all domins and suppress finalize 
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Finalize">
+            <summary>
+            Finilazire for server
+            </summary>
+        </member>
         <member name="T:MyServiceLibrary.Implementation.UserService">
             <summary>
             Users service
@@ -259,20 +275,20 @@
             </summary>
             <param name="user">User to add</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.Delete(System.Linq.Expressions.Expression{System.Predicate{MyServiceLibrary.Implementation.User}})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Delete(System.Predicate{MyServiceLibrary.Implementation.User})">
             <summary>
             Method remove all user which matches the predicate.  
             </summary>
             <param name="predicate">Predicate</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.SearchDeferred(System.Linq.Expressions.Expression{System.Func{MyServiceLibrary.Implementation.User,System.Boolean}})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.SearchDeferred(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
             <summary>
             Method deferred returns users which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Users which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.Search(System.Linq.Expressions.Expression{System.Func{MyServiceLibrary.Implementation.User,System.Boolean}})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Search(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
             <summary>
             Method returns users which matches the predicate
             </summary>
@@ -413,20 +429,20 @@
             </summary>
             <param name="item">Item</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Delete(System.Linq.Expressions.Expression{System.Predicate{`0}})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.Delete(System.Predicate{`0})">
             <summary>
             Method removes items which matches the predicate. 
             </summary>
             <param name="predicate">Predicate</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.SearchDeferred(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.SearchDeferred(System.Func{`0,System.Boolean})">
             <summary>
             Method deferred returns items which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Items which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Search(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:MyServiceLibrary.Interfaces.IService`1.Search(System.Func{`0,System.Boolean})">
             <summary>
             Method returns items which matches the predicate
             </summary>

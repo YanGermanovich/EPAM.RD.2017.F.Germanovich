@@ -35,3 +35,34 @@ Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.La
 Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.LastName == "Germanovich")
 Info|28.02.2017 13:45:50|Users was searched by this predicate : us => True
 Fatal|28.02.2017 13:45:50|Exist user error. User Germanovich Yan 04.07.1998 is already exist
+Info|28.02.2017 14:56:53|User Yan Germanovich added
+Info|28.02.2017 14:56:53|User Yan Germanovich added
+Info|28.02.2017 14:56:54|User Yan Germanovich added
+Info|28.02.2017 15:06:15|User Yan Germanovich added
+Info|28.02.2017 15:06:15|Users was searched by predicate 
+Info|28.02.2017 15:06:38|User Yan Germanovich added
+Info|28.02.2017 15:06:38|Users was searched by predicate 
+Info|28.02.2017 15:06:38|Users deleted by predicate
+Info|28.02.2017 15:06:38|Users was searched by predicate 
+Info|28.02.2017 15:06:56|User Yan Germanovich added
+Info|28.02.2017 15:06:56|Users was searched by predicate 
+Info|28.02.2017 15:06:56|Users deleted by predicate
+Info|28.02.2017 15:06:56|Users was searched by predicate 
+Info|28.02.2017 15:06:56|Users was searched by predicate 
+Fatal|28.02.2017 15:06:56|Exist user error. User Germanovich Yan 04.07.1998 is already exist
+Info|28.02.2017 15:07:14|User Yan Germanovich added
+Info|28.02.2017 15:07:14|Users was searched by predicate 
+Info|28.02.2017 15:07:14|Users deleted by predicate
+Info|28.02.2017 15:07:14|Users was searched by predicate 
+Info|28.02.2017 15:07:22|User Yan Germanovich added
+Info|28.02.2017 15:07:22|Users was searched by predicate 
+Info|28.02.2017 15:07:22|Users deleted by predicate
+Info|28.02.2017 15:07:22|Users was searched by predicate 
+Info|28.02.2017 15:07:57|User Yan Germanovich added
+Info|28.02.2017 15:07:57|Users was searched by predicate 
+Info|28.02.2017 15:07:57|Users deleted by predicate
+Info|28.02.2017 15:07:57|Users was searched by predicate 
+Info|28.02.2017 15:08:15|User Yan Germanovich added
+Info|28.02.2017 15:08:15|Users was searched by predicate 
+Info|28.02.2017 15:08:15|Users deleted by predicate
+Info|28.02.2017 15:08:15|Users was searched by predicate 

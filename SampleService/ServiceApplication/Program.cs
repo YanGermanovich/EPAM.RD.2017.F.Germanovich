@@ -12,28 +12,31 @@ namespace ServiceApplication
     {
         public static void Main(string[] args)
         {
-            int i = 0;
+            var generator = new IdGenerator();
+            Func<int> idGenerator = generator.Generate;
             var server = new ServiceServer<UserService>(
-                                                        () => { i += 1; return i; },
+                                                        idGenerator,
                                                         new XmlSerializeProvider<User[]>());
 
 
-            var search_byFirstName_deferred = server.Slaves.ElementAt(0).SearchDeferred((user) => user.FirstName == "Ivan");
+            //var search_byFirstName_deferred = server.Slaves.ElementAt(0).SearchDeferred((user) => user.FirstName == "Ivan");
             var search_byFirstName = server.Slaves.ElementAt(2).Search((user) => user.FirstName == "Ivan");
 
             server.Master.Delete((user) => user.FirstName == "Ivan");
 
-            var search_byLastName_deferred = server.Slaves.ElementAt(1).SearchDeferred((user) => user.LastName == "Germanovich");
+            //var search_byLastName_deferred = server.Slaves.ElementAt(1).SearchDeferred((user) => user.LastName == "Germanovich");
             var search_byLastName = server.Slaves.ElementAt(2).Search((user) => user.LastName == "Germanovich");
 
-            Output(search_byFirstName_deferred, "Deferred search users by first name ");
+            //Output(search_byFirstName_deferred, "Deferred search users by first name ");
             Output(search_byFirstName, "Search users by first name");
-            Output(search_byLastName_deferred, "Deferred search users by last name");
+           // Output(search_byLastName_deferred, "Deferred search users by last name");
             Output(search_byLastName, "Search users by last name");
 
             server.Master.SerializeState(new XmlSerializeProvider<User[]>());
 
-            server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
+            //server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
+
+            server.Dispose();
 
             ReadKey();
 
@@ -66,6 +69,16 @@ namespace ServiceApplication
             }
 
             WriteLine();
+        }
+    }
+
+    [Serializable]
+    public class IdGenerator
+    {
+        private int id=0;
+        public int Generate()
+        {
+            return id++;
         }
     }
 }

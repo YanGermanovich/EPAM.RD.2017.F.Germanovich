@@ -6,22 +6,52 @@ using System.Linq;
 using System.Xml.Serialization;
 using LoggerSingleton;
 using MyServiceLibrary.Interfaces;
+using System.Reflection;
+using System.Globalization;
 
 namespace MyServiceLibrary.Implementation
 {
     /// <summary>
     /// Server of user service
     /// </summary>
-    public class ServiceServer<T> : IServiceServer<IService<User>>
+    public class ServiceServer<T> : IServiceServer<IService<User>>, IDisposable
            where T : IService<User>
     {
+        #region Private Fields
+        private bool disposed = false;
+
+        private AppDomain masterDomain = AppDomain.CreateDomain(
+                                                                "MyDomianForMaster",
+                                                                 null,
+                                                                 new AppDomainSetup
+                                                                 {
+                                                                     ApplicationBase = AppDomain.CurrentDomain.BaseDirectory,
+                                                                     PrivateBinPath = Path.Combine(
+                                                                                                   AppDomain.CurrentDomain.BaseDirectory,
+                                                                                                   "MyDomianForMaster")
+                                                                 });
+
+        private List<AppDomain> slavesDomians = new List<AppDomain>();
+
+        #endregion
+
+        #region Public Methods
+
+        #region Constructors
         /// <summary>
         /// Default constructor
         /// </summary>
         public ServiceServer()
         {
-            this.Master = (T)Activator.CreateInstance(typeof(T), ServiceRoles.Master);
-
+            this.Master = (T)this.masterDomain.CreateInstanceAndUnwrap(
+                                                                        Assembly.GetExecutingAssembly().FullName,
+                                                                        typeof(User).FullName,
+                                                                        false,
+                                                                        BindingFlags.Default,
+                                                                        null,
+                                                                        new object[] { ServiceRoles.Master },
+                                                                        CultureInfo.CurrentCulture,
+                                                                        null);
             this.CreateHelper();
         }
 
@@ -37,7 +67,15 @@ namespace MyServiceLibrary.Implementation
                 throw new ArgumentNullException(nameof(idGenerator));
             }
 
-            this.Master = (T)Activator.CreateInstance(typeof(T), idGenerator, ServiceRoles.Master);
+            this.Master = (T)this.masterDomain.CreateInstanceAndUnwrap(
+                                                                        Assembly.GetExecutingAssembly().FullName,
+                                                                        typeof(T).FullName,
+                                                                        false,
+                                                                        BindingFlags.Default,
+                                                                        null,
+                                                                        new object[] { idGenerator, ServiceRoles.Master },
+                                                                        CultureInfo.CurrentCulture,
+                                                                        null);
             this.CreateHelper();
         }
 
@@ -60,6 +98,8 @@ namespace MyServiceLibrary.Implementation
             this.InitializeCollection(serializerProvider);
         }
 
+        #endregion
+
         /// <summary>
         /// Property returns all slaves
         /// </summary>
@@ -70,6 +110,44 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         public IEnumerable<IService<User>> Slaves { get; private set; }
 
+        /// <summary>
+        /// Method unload all domains
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        #endregion
+
+        #region Protected Method
+
+        /// <summary>
+        /// Method unload all domins and suppress finalize 
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    GC.SuppressFinalize(this);
+                }
+
+                foreach (AppDomain slaveDom in this.slavesDomians)
+                {
+                    AppDomain.Unload(slaveDom);
+                }
+
+                AppDomain.Unload(masterDomain);
+
+                disposed = true;
+            }
+        }
+        #endregion
+
+        #region Private Methods
         private void CreateHelper()
         {
             if (!ConfigurationManager.AppSettings.AllKeys.Contains("SlavesCount"))
@@ -87,7 +165,15 @@ namespace MyServiceLibrary.Implementation
             List<IService<User>> slaves = new List<IService<User>>();
             for (int i = 0; i < count; i++)
             {
-                slaves.Add(new UserService(this.Master as UserService));
+                slaves.Add((T)this.masterDomain.CreateInstanceAndUnwrap(
+                                                                        Assembly.GetExecutingAssembly().FullName,
+                                                                        typeof(T).FullName,
+                                                                        false,
+                                                                        BindingFlags.Default,
+                                                                        null,
+                                                                        new object[] { this.Master},
+                                                                        CultureInfo.CurrentCulture,
+                                                                        null));
             }
 
             this.Slaves = slaves;
@@ -118,5 +204,18 @@ namespace MyServiceLibrary.Implementation
                 }
             }
         }
+        #endregion
+
+        #region Finilizer
+        /// <summary>
+        /// Finilazire for server
+        /// </summary>
+        ~ServiceServer()
+        {
+            Dispose(false);
+        }
+
+        #endregion
+
     }
 }

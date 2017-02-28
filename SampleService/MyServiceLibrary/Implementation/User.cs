@@ -6,6 +6,7 @@ namespace MyServiceLibrary.Implementation
     /// <summary>
     /// User entity
     /// </summary>
+    [Serializable]
     public class User
     {
         /// <summary>

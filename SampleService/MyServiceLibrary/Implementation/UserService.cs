@@ -14,7 +14,7 @@ namespace MyServiceLibrary.Implementation
     /// <summary>
     /// Users service
     /// </summary>
-    public class UserService : IService<User>
+    public class UserService : MarshalByRefObject, IService<User>
     {
         private List<User> users = new List<User>();
 
@@ -145,7 +145,7 @@ namespace MyServiceLibrary.Implementation
         /// Method remove all user which matches the predicate.  
         /// </summary>
         /// <param name="predicate">Predicate</param>
-        public void Delete(Expression<Predicate<User>> predicate)
+        public void Delete(Predicate<User> predicate)
         {
             this.DeleteHelper(predicate);
         }
@@ -155,7 +155,7 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Users which matches the predicate</returns>
-        public IEnumerable<User> SearchDeferred(Expression<Func<User, bool>> predicate)
+        public IEnumerable<User> SearchDeferred(Func<User, bool> predicate)
         {
             if (predicate == null)
             {
@@ -163,9 +163,9 @@ namespace MyServiceLibrary.Implementation
                 throw new ArgumentNullException(nameof(predicate));
             }
 
-            NlogLogger.Logger.Info($"Users was searched by this predicate : {predicate}");
+            NlogLogger.Logger.Info($"Users was searched by predicate ");
 
-            return this.users.Where(predicate.Compile());
+            return this.users.Where(predicate);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Users which matches the predicate</returns>
-        public List<User> Search(Expression<Func<User, bool>> predicate)
+        public List<User> Search(Func<User, bool> predicate)
         {
             return this.SearchDeferred(predicate).ToList();
         }
@@ -243,7 +243,7 @@ namespace MyServiceLibrary.Implementation
             {
                 this.DeleteUser(this, e);
             }
-            NlogLogger.Logger.Info($"Users deleted by this predicate : {e.Predicate}");
+            NlogLogger.Logger.Info("Users deleted by predicate");
         }
 
         #endregion
@@ -330,7 +330,7 @@ namespace MyServiceLibrary.Implementation
             this.users.Add(user);
         }
 
-        private void DeleteHelper(Expression<Predicate<User>> predicate)
+        private void DeleteHelper(Predicate<User> predicate)
         {
             if (predicate == null)
             {
@@ -338,7 +338,7 @@ namespace MyServiceLibrary.Implementation
                 throw new ArgumentNullException(nameof(predicate));
             }
 
-            this.users.RemoveAll(predicate.Compile());
+            this.users.RemoveAll(predicate);
 
             if (this.Role == ServiceRoles.Master)
             {

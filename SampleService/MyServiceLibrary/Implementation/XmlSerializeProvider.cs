@@ -9,6 +9,7 @@ namespace MyServiceLibrary.Implementation
     /// Class provides xml serializer
     /// </summary>
     /// <typeparam name="T">type of object to serialize</typeparam>
+    [Serializable]
     public class XmlSerializeProvider<T> : ISerializerProvider<T>
         where T : class
     {

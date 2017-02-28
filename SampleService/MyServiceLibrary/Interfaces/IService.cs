@@ -9,7 +9,7 @@ namespace MyServiceLibrary.Interfaces
     /// Generic interface. It provides functions of service.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IService<T>
+    public interface IService<T> 
     {
         #region Property
         /// <summary>
@@ -36,21 +36,21 @@ namespace MyServiceLibrary.Interfaces
         /// Method removes items which matches the predicate. 
         /// </summary>
         /// <param name="predicate">Predicate</param>
-        void Delete(Expression<Predicate<T>> predicate);
+        void Delete(Predicate<T> predicate);
 
         /// <summary>
         /// Method deferred returns items which matches the predicate
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Items which matches the predicate</returns>
-        IEnumerable<T> SearchDeferred(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> SearchDeferred(Func<T, bool> predicate);
 
         /// <summary>
         /// Method returns items which matches the predicate
         /// </summary>
         /// <param name="predicate">Predicate</param>
         /// <returns>Items which matches the predicate</returns>
-        List<T> Search(Expression<Func<T, bool>> predicate);
+        List<T> Search(Func<T, bool> predicate);
 
         /// <summary>
         /// Method serialize actual state using current serializer
