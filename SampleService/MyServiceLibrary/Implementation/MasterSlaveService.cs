@@ -159,12 +159,19 @@ namespace MyServiceLibrary.Implementation
                     GC.SuppressFinalize(this);
                 }
 
-                foreach (var service in this.Slaves)
+                if (this.Slaves != null)
                 {
-                    service.Dispose();
+
+                    foreach (var service in this.Slaves)
+                    {
+                        service.Dispose();
+                    }
                 }
 
-                this.Master.Dispose();
+                if (this.Master != null)
+                {
+                    this.Master.Dispose();
+                }
 
                 foreach (AppDomain slaveDom in this.slavesDomians)
                 {

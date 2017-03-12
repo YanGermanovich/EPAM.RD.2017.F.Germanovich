@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MyServiceLibrary.CustomEventArgs
 {
 
-
+    [Serializable]
     public class AddItemEventArgs<T>
     {
         private readonly List<T> addUsers;

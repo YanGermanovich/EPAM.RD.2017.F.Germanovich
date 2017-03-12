@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace MyServiceLibrary.CustomEventArgs
 {
+    [Serializable]
     public class DeleteItemEventArgs<T>
     {
-        private readonly Predicate<T> removeUsers;
+        private readonly List<T> removeUsers;
 
-        public DeleteItemEventArgs(Predicate<T> removeUsers)
+        public DeleteItemEventArgs(List<T> removeUsers)
         {
             this.removeUsers = removeUsers;
         }
-        public Predicate<T> UsersToRemove
+        public List<T> UsersToRemove
         {
             get
             {

@@ -19,8 +19,27 @@ namespace ServiceApplication
             var server = new MasterSlaveService<UserService>(
                                                         idGenerator,
                                                         new XmlSerializeProvider<User[]>());
-            var all = server.Slaves.ElementAt(0).Search((u) => true);
+            var all = server.Master.Search((u) => true);
             Output(all, "All users");
+            
+            while (true)
+            {
+                var str = Console.ReadLine();
+                if (str == "End")
+                    break;
+                if (str == "D")
+                    server.Master.Delete((user) => user.FirstName == "Ivan");
+                if (str == "A")
+                    server.Master.Add(new User()
+                    {
+                        DateOfBirth = new DateTime(1998, 7, 4),
+                        FirstName = "Ivan",
+                        LastName = "Ivanov"
+                    });
+                all = server.Master.Search((u) => true);
+                Output(all, "All users");
+            }
+
             //var generator = new IdGenerator();
             //Func<int> idGenerator = generator.Generate;
             //var server = new MasterSlaveService<UserService>(
@@ -46,7 +65,7 @@ namespace ServiceApplication
             ////server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
 
             //server.Dispose();
-
+            server.Dispose();
             ReadKey();
 
             // 1. Add a new user to the storage.

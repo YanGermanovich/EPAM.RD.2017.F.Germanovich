@@ -313,13 +313,13 @@ namespace MyServiceLibrary.Implementation
 
         private void OnAddUser(AddItemEventArgs<User> e)
         {
-            NotifySlaves(Serialize(e.UsersToAdd).GetAwaiter().GetResult()).GetAwaiter().GetResult();
+            NotifySlaves(Serialize(e).GetAwaiter().GetResult()).GetAwaiter().GetResult();
             NlogLogger.Logger.Info($"Some users added");
         }
 
         private void OnDeleteUser(DeleteItemEventArgs<User> e)
         {
-            NotifySlaves(Serialize(e.UsersToRemove).GetAwaiter().GetResult()).GetAwaiter().GetResult(); 
+            NotifySlaves(Serialize(e).GetAwaiter().GetResult()).GetAwaiter().GetResult();
             NlogLogger.Logger.Info("Users deleted by predicate");
         }
 
@@ -381,12 +381,12 @@ namespace MyServiceLibrary.Implementation
                 throw new ArgumentNullException(nameof(predicate));
             }
 
-            this.users.RemoveAll(predicate);
 
             if (TryPermission(ServiceRoles.Master))
             {
-                this.OnDeleteUser(new DeleteItemEventArgs<User>(predicate));
+                this.OnDeleteUser(new DeleteItemEventArgs<User>(users.FindAll(predicate).ToList()));
             }
+            this.users.RemoveAll(predicate);
         }
 
         private void SendMessageFromSocket(IPEndPoint ipEndPoint, byte[] data)
@@ -412,22 +412,18 @@ namespace MyServiceLibrary.Implementation
                 Socket handler = sListener.Accept();
                 byte[] bytes = new byte[2000];
                 int length = handler.Receive(bytes);
-                Console.WriteLine($"Message received");
                 if (Encoding.UTF8.GetString(bytes, 0,length) == "<End>")
                 {
-                    Console.WriteLine("End");
                     handler.Shutdown(SocketShutdown.Both);
                     handler.Close();
                     break;
                 }
                 if (TryPermission(ServiceRoles.Master))
                 {
-                    Console.WriteLine("Master");
                     AddOrRemoveSlave(bytes);
                 }
                 else
                 {
-                    Console.WriteLine("Slave");
                     UpdateUsers(bytes);
                 }
 
@@ -450,7 +446,7 @@ namespace MyServiceLibrary.Implementation
                 else
                 {
                     slaves.Add(slaveEndPoint);
-                    SendMessageFromSocket(slaveEndPoint, Serialize(users).GetAwaiter().GetResult());
+                    SendMessageFromSocket(slaveEndPoint, Serialize(new AddItemEventArgs<User>(users)).GetAwaiter().GetResult());
                 }
 
                 return;
@@ -459,14 +455,14 @@ namespace MyServiceLibrary.Implementation
 
         private void UpdateUsers(byte[] data)
         {
-            List<User> users = DeserializeClass<List<User>>(data).GetAwaiter().GetResult();
-            if(users != null)
+            AddItemEventArgs<User> users = DeserializeClass<AddItemEventArgs<User>>(data).GetAwaiter().GetResult();
+            if (users != null)
             {
-                AddHelper(users);
+                AddHelper(users.UsersToAdd);
                 return;
             }
-
-            DeleteHelper(DeserializeClass<Predicate<User>>(data).GetAwaiter().GetResult());
+            DeleteItemEventArgs<User> usersToDelete = DeserializeClass<DeleteItemEventArgs<User>>(data).GetAwaiter().GetResult();
+            DeleteHelper((u) => usersToDelete.UsersToRemove.Contains(u));
         }
 
         private async Task<byte[]> Serialize<T> (T obj)
