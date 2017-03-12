@@ -1,0 +1,41 @@
+11.03.2017 15:10:27|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:10:27|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:13:02|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:13:02|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:21:08|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:21:09|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:22:59|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:22:59|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:20:00|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:20:00|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:21:33|No file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:21:33|Empry file name|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState
+12.03.2017 12:22:00|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No AppMode|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:22:01|No FileName|UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 12:22:01|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|MasterSlaveService`1..ctor => MasterSlaveService`1.GetMasterEndPoint => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|MasterSlaveService`1..ctor => MasterSlaveService`1.GetMasterEndPoint => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|MasterSlaveService`1..ctor => MasterSlaveService`1.GetMasterEndPoint => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No MasterId|UserService..ctor => UserService.CreateHelper => GetValueFromConfig.Get
+12.03.2017 12:52:37|No FileName|UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 12:52:37|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 12:52:45|No MasterId|MasterSlaveService`1..ctor => MasterSlaveService`1.GetMasterEndPoint => GetValueFromConfig.Get
+12.03.2017 12:53:17|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 12:55:50|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 13:00:12|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 14:04:32|No FileName|UserServiceTests.Serialize_NullFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get
+12.03.2017 14:04:32|Empty FileName|UserServiceTests.Serialize_EmptyFileName_ExceptionThrown => UserService.SerializeState => GetValueFromConfig.Get

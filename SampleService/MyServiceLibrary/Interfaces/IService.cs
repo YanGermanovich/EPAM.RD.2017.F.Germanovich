@@ -9,7 +9,7 @@ namespace MyServiceLibrary.Interfaces
     /// Generic interface. It provides functions of service.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IService<T> 
+    public interface IService<T> : IDisposable
     {
         #region Property
         /// <summary>

@@ -1,0 +1,348 @@
+Fatal|11.03.2017 15:10:26|Value cannot be null. Parameter name: idGenerator
+Info|11.03.2017 15:10:26|User Ivan Ivanov added
+Info|11.03.2017 15:10:27|User Ivan Ivanov added
+Info|11.03.2017 15:10:27|User Pavel Ivanov added
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: master
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: user
+Info|11.03.2017 15:10:27|User Ivan Ivanov added
+Fatal|11.03.2017 15:10:27|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 15:10:27|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|11.03.2017 15:10:27|User Ivan Ivanov added
+Info|11.03.2017 15:10:27|User Ivan1 Ivanov added
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:10:27|User Yan Germanovich added
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:10:27|Users was searched by predicate 
+Info|11.03.2017 15:10:27|User Yan Germanovich added
+Info|11.03.2017 15:10:27|Users was searched by predicate 
+Info|11.03.2017 15:10:27|Users deleted by predicate
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:10:27|Users was searched by predicate 
+Info|11.03.2017 15:10:27|User Yan Germanovich added
+Info|11.03.2017 15:10:27|Users was searched by predicate 
+Fatal|11.03.2017 15:10:27|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 15:10:27|No file name
+Error|11.03.2017 15:10:27|Empry file name
+Info|11.03.2017 15:10:34|User Ivan Ivanov added
+Fatal|11.03.2017 15:13:01|Value cannot be null. Parameter name: idGenerator
+Info|11.03.2017 15:13:01|User Ivan Ivanov added
+Info|11.03.2017 15:13:02|User Ivan Ivanov added
+Info|11.03.2017 15:13:02|User Pavel Ivanov added
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: master
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: user
+Info|11.03.2017 15:13:02|User Ivan Ivanov added
+Fatal|11.03.2017 15:13:02|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 15:13:02|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|11.03.2017 15:13:02|User Ivan Ivanov added
+Info|11.03.2017 15:13:02|User Ivan1 Ivanov added
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:13:02|User Yan Germanovich added
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:13:02|Users was searched by predicate 
+Info|11.03.2017 15:13:02|User Yan Germanovich added
+Info|11.03.2017 15:13:02|Users was searched by predicate 
+Info|11.03.2017 15:13:02|Users deleted by predicate
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:13:02|Users was searched by predicate 
+Info|11.03.2017 15:13:02|User Yan Germanovich added
+Info|11.03.2017 15:13:02|Users was searched by predicate 
+Fatal|11.03.2017 15:13:02|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 15:13:02|No file name
+Error|11.03.2017 15:13:02|Empry file name
+Info|11.03.2017 15:13:08|User Ivan Ivanov added
+Info|11.03.2017 15:13:20|User Ivan Ivanov added
+Info|11.03.2017 15:13:46|User Ivan Ivanov added
+Info|11.03.2017 15:16:18|User Ivan Ivanov added
+Info|11.03.2017 15:17:27|User Ivan Ivanov added
+Info|11.03.2017 15:17:29|Users was searched by predicate 
+Info|11.03.2017 15:18:18|User Ivan Ivanov added
+Info|11.03.2017 15:18:21|Users was searched by predicate 
+Info|11.03.2017 15:19:08|User Ivan Ivanov added
+Info|11.03.2017 15:19:10|Users was searched by predicate 
+Info|11.03.2017 15:19:55|User Ivan Ivanov added
+Info|11.03.2017 15:19:55|Users was searched by predicate 
+Info|11.03.2017 15:19:55|Users was searched by predicate 
+Info|11.03.2017 15:19:55|Users was searched by predicate 
+Fatal|11.03.2017 15:21:07|Value cannot be null. Parameter name: idGenerator
+Info|11.03.2017 15:21:08|User Ivan Ivanov added
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|User Ivan Ivanov added
+Info|11.03.2017 15:21:08|User Pavel Ivanov added
+Info|11.03.2017 15:21:08|Users deleted by predicate
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: master
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: user
+Info|11.03.2017 15:21:08|User Ivan Ivanov added
+Fatal|11.03.2017 15:21:08|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 15:21:08|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|11.03.2017 15:21:08|User Ivan Ivanov added
+Info|11.03.2017 15:21:08|User Ivan1 Ivanov added
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:21:08|User Yan Germanovich added
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|User Yan Germanovich added
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|Users deleted by predicate
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Info|11.03.2017 15:21:08|User Yan Germanovich added
+Info|11.03.2017 15:21:08|Users was searched by predicate 
+Fatal|11.03.2017 15:21:08|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 15:21:08|No file name
+Error|11.03.2017 15:21:09|Empry file name
+Info|11.03.2017 15:21:23|User Ivan Ivanov added
+Info|11.03.2017 15:21:24|User Pavel Ivanov added
+Info|11.03.2017 15:21:28|Users deleted by predicate
+Info|11.03.2017 15:22:23|User Ivan Ivanov added
+Info|11.03.2017 15:22:23|User Pavel Ivanov added
+Info|11.03.2017 15:22:23|Users deleted by predicate
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:23|Users was searched by predicate 
+Info|11.03.2017 15:22:40|User Yan Germanovich added
+Fatal|11.03.2017 15:22:58|Value cannot be null. Parameter name: idGenerator
+Info|11.03.2017 15:22:58|User Ivan Ivanov added
+Info|11.03.2017 15:22:58|Users was searched by predicate 
+Info|11.03.2017 15:22:58|Users was searched by predicate 
+Info|11.03.2017 15:22:58|Users was searched by predicate 
+Info|11.03.2017 15:22:59|User Ivan Ivanov added
+Info|11.03.2017 15:22:59|User Pavel Ivanov added
+Info|11.03.2017 15:22:59|Users deleted by predicate
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: master
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: user
+Info|11.03.2017 15:22:59|User Ivan Ivanov added
+Fatal|11.03.2017 15:22:59|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 15:22:59|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|11.03.2017 15:22:59|User Ivan Ivanov added
+Info|11.03.2017 15:22:59|User Ivan1 Ivanov added
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:22:59|User Yan Germanovich added
+Info|11.03.2017 15:22:59|Users deleted by predicate
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|User Yan Germanovich added
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|Users deleted by predicate
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Info|11.03.2017 15:22:59|User Yan Germanovich added
+Info|11.03.2017 15:22:59|Users was searched by predicate 
+Fatal|11.03.2017 15:22:59|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 15:22:59|No file name
+Error|11.03.2017 15:22:59|Empry file name
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: user
+Info|11.03.2017 17:20:00|Some users added
+Fatal|11.03.2017 17:20:00|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 17:20:00|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:20:00|Some users added
+Info|11.03.2017 17:20:00|Users deleted by predicate
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:20:00|Users was searched by predicate 
+Info|11.03.2017 17:20:00|Some users added
+Info|11.03.2017 17:20:00|Users was searched by predicate 
+Info|11.03.2017 17:20:00|Users deleted by predicate
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:20:00|Users was searched by predicate 
+Info|11.03.2017 17:20:00|Some users added
+Info|11.03.2017 17:20:00|Users was searched by predicate 
+Fatal|11.03.2017 17:20:00|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 17:20:00|No file name
+Error|11.03.2017 17:20:00|Empry file name
+Fatal|11.03.2017 17:21:31|Value cannot be null. Parameter name: idGenerator
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Users deleted by predicate
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: user
+Info|11.03.2017 17:21:32|Some users added
+Fatal|11.03.2017 17:21:32|Exist user error. User Ivanov Ivan 11.03.2017 is already exist
+Fatal|11.03.2017 17:21:32|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: idGenerator
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: users
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Users deleted by predicate
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Info|11.03.2017 17:21:32|Users deleted by predicate
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Info|11.03.2017 17:21:32|Some users added
+Info|11.03.2017 17:21:32|Users was searched by predicate 
+Fatal|11.03.2017 17:21:32|Value cannot be null. Parameter name: serializer
+Error|11.03.2017 17:21:33|No file name
+Error|11.03.2017 17:21:33|Empry file name
+Info|11.03.2017 17:21:42|Some users added
+Info|11.03.2017 17:21:51|Users was searched by predicate 
+Fatal|12.03.2017 12:22:00|Value cannot be null. Parameter name: idGenerator
+Error|12.03.2017 12:22:00|No AppMode
+Error|12.03.2017 12:22:01|No AppMode
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: user
+Info|12.03.2017 12:22:01|Some users added
+Fatal|12.03.2017 12:22:01|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 12:22:01|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 12:22:01|Some users added
+Info|12.03.2017 12:22:01|Some users added
+Error|12.03.2017 12:22:01|No AppMode
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 12:22:01|Some users added
+Info|12.03.2017 12:22:01|Users deleted by predicate
+Error|12.03.2017 12:22:01|No AppMode
+Error|12.03.2017 12:22:01|No AppMode
+Error|12.03.2017 12:22:01|No AppMode
+Info|12.03.2017 12:22:01|Some users added
+Info|12.03.2017 12:22:01|Users was searched by predicate 
+Info|12.03.2017 12:22:01|Users deleted by predicate
+Error|12.03.2017 12:22:01|No AppMode
+Error|12.03.2017 12:22:01|No AppMode
+Info|12.03.2017 12:22:01|Some users added
+Info|12.03.2017 12:22:01|Users was searched by predicate 
+Fatal|12.03.2017 12:22:01|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 12:22:01|No AppMode
+Error|12.03.2017 12:22:01|No FileName
+Error|12.03.2017 12:22:01|Empty FileName
+Error|12.03.2017 12:52:37|No MasterId
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator
+Error|12.03.2017 12:52:37|No MasterId
+Error|12.03.2017 12:52:37|No MasterId
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: user
+Info|12.03.2017 12:52:37|Some users added
+Fatal|12.03.2017 12:52:37|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 12:52:37|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 12:52:37|Some users added
+Info|12.03.2017 12:52:37|Some users added
+Error|12.03.2017 12:52:37|No MasterId
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 12:52:37|Some users added
+Info|12.03.2017 12:52:37|Users deleted by predicate
+Error|12.03.2017 12:52:37|No MasterId
+Error|12.03.2017 12:52:37|No MasterId
+Error|12.03.2017 12:52:37|No MasterId
+Info|12.03.2017 12:52:37|Some users added
+Info|12.03.2017 12:52:37|Users was searched by predicate 
+Info|12.03.2017 12:52:37|Users deleted by predicate
+Error|12.03.2017 12:52:37|No MasterId
+Error|12.03.2017 12:52:37|No MasterId
+Info|12.03.2017 12:52:37|Some users added
+Info|12.03.2017 12:52:37|Users was searched by predicate 
+Fatal|12.03.2017 12:52:37|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 12:52:37|No MasterId
+Error|12.03.2017 12:52:37|No FileName
+Error|12.03.2017 12:52:37|Empty FileName
+Error|12.03.2017 12:52:45|No MasterId
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: user
+Info|12.03.2017 12:53:17|Some users added
+Fatal|12.03.2017 12:53:17|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 12:53:17|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 12:53:17|Some users added
+Info|12.03.2017 12:53:17|Some users added
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 12:53:17|Some users added
+Info|12.03.2017 12:53:17|Users deleted by predicate
+Info|12.03.2017 12:53:17|Some users added
+Info|12.03.2017 12:53:17|Users was searched by predicate 
+Info|12.03.2017 12:53:17|Users deleted by predicate
+Info|12.03.2017 12:53:17|Some users added
+Info|12.03.2017 12:53:17|Users was searched by predicate 
+Fatal|12.03.2017 12:53:17|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 12:53:17|Empty FileName
+Fatal|12.03.2017 12:55:49|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:55:49|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:55:49|Value cannot be null. Parameter name: user
+Info|12.03.2017 12:55:49|Some users added
+Fatal|12.03.2017 12:55:49|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 12:55:50|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 12:55:50|Some users added
+Info|12.03.2017 12:55:50|Some users added
+Fatal|12.03.2017 12:55:50|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 12:55:50|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 12:55:50|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 12:55:50|Some users added
+Info|12.03.2017 12:55:50|Users deleted by predicate
+Info|12.03.2017 12:55:50|Some users added
+Info|12.03.2017 12:55:50|Users was searched by predicate 
+Info|12.03.2017 12:55:50|Users deleted by predicate
+Info|12.03.2017 12:55:50|Some users added
+Info|12.03.2017 12:55:50|Users was searched by predicate 
+Fatal|12.03.2017 12:55:50|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 12:55:50|Empty FileName
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: user
+Info|12.03.2017 13:00:12|Some users added
+Fatal|12.03.2017 13:00:12|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 13:00:12|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 13:00:12|Some users added
+Info|12.03.2017 13:00:12|Some users added
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 13:00:12|Some users added
+Info|12.03.2017 13:00:12|Users deleted by predicate
+Info|12.03.2017 13:00:12|Some users added
+Info|12.03.2017 13:00:12|Users was searched by predicate 
+Info|12.03.2017 13:00:12|Users deleted by predicate
+Info|12.03.2017 13:00:12|Some users added
+Info|12.03.2017 13:00:12|Users was searched by predicate 
+Fatal|12.03.2017 13:00:12|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 13:00:12|Empty FileName
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: user
+Info|12.03.2017 14:04:32|Some users added
+Fatal|12.03.2017 14:04:32|Exist user error. User Ivanov Ivan 12.03.2017 is already exist
+Fatal|12.03.2017 14:04:32|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001
+Info|12.03.2017 14:04:32|Some users added
+Info|12.03.2017 14:04:32|Some users added
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: users
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: predicate
+Info|12.03.2017 14:04:32|Some users added
+Info|12.03.2017 14:04:32|Users deleted by predicate
+Info|12.03.2017 14:04:32|Some users added
+Info|12.03.2017 14:04:32|Users was searched by predicate 
+Info|12.03.2017 14:04:32|Users deleted by predicate
+Info|12.03.2017 14:04:32|Some users added
+Info|12.03.2017 14:04:32|Users was searched by predicate 
+Fatal|12.03.2017 14:04:32|Value cannot be null. Parameter name: serializer
+Error|12.03.2017 14:04:32|No FileName
+Error|12.03.2017 14:04:32|Empty FileName

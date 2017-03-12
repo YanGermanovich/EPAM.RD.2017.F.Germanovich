@@ -46,20 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomEventArgs\AddItemEventArgs.cs" />
+    <Compile Include="CustomEventArgs\DeleteItemEventArgs.cs" />
     <Compile Include="CustomExceptions\AccesPermissionException.cs" />
     <Compile Include="CustomExceptions\ExistUserException.cs" />
     <Compile Include="CustomExceptions\DefaultUserException.cs" />
-    <Compile Include="EventArguments\AddItemEventArgs.cs" />
-    <Compile Include="EventArguments\DeleteItemEventArgs.cs" />
+    <Compile Include="CustomSection\Master.cs" />
+    <Compile Include="CustomSection\RegisterServicesConfig.cs" />
+    <Compile Include="CustomSection\Service.cs" />
+    <Compile Include="CustomSection\Slaves.cs" />
     <Compile Include="Helpers\CheckDefaultValueAttribute.cs" />
     <Compile Include="Helpers\CheckDefaultValues.cs" />
+    <Compile Include="Helpers\GetValueFromConfig.cs" />
     <Compile Include="Implementation\Roles.cs" />
     <Compile Include="Implementation\XmlSerializeProvider.cs" />
     <Compile Include="Interfaces\ISerializerProvider.cs" />
     <Compile Include="Interfaces\IService.cs" />
-    <Compile Include="Implementation\ServiceServer.cs" />
+    <Compile Include="Implementation\MasterSlaveService.cs" />
     <Compile Include="Implementation\UserService.cs" />
-    <Compile Include="Interfaces\IServiceServer.cs" />
+    <Compile Include="Interfaces\IMasterSlaveService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementation\User.cs" />
   </ItemGroup>
@@ -77,6 +82,10 @@
     <ProjectReference Include="..\LoggerSingleton\LoggerSingleton.csproj">
       <Project>{a973ce9a-2858-49b0-8d07-b7a23d0855d6}</Project>
       <Name>LoggerSingleton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Serializer\Serializer.csproj">
+      <Project>{d15636b6-46e4-4308-873e-9c6047cbce1e}</Project>
+      <Name>Serializer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

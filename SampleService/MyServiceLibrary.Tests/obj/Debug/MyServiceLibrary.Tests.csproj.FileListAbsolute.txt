@@ -25,3 +25,5 @@ D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Te
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.dll
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Tests\bin\Debug\LoggerSingleton.pdb
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Tests\bin\Debug\NLog.xml
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Tests\bin\Debug\Serializer.dll
+D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary.Tests\bin\Debug\Serializer.pdb

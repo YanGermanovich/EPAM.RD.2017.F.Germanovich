@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using LoggerSingleton;
 using MyServiceLibrary.CustomExceptions;
-using MyServiceLibrary.EventArguments;
 using MyServiceLibrary.Helpers;
 using MyServiceLibrary.Interfaces;
+using System.Net;
+using System.Text;
+using System.Net.Sockets;
+using Serializer;
+using MyServiceLibrary.CustomEventArgs;
+using System.Threading.Tasks;
+using MyServiceLibrary.CustomSection;
+using System.Configuration;
 
 namespace MyServiceLibrary.Implementation
 {
@@ -17,6 +23,14 @@ namespace MyServiceLibrary.Implementation
     public class UserService : MarshalByRefObject, IService<User>
     {
         private List<User> users = new List<User>();
+
+        private List<IPEndPoint> slaves;
+
+        private IPEndPoint endPoint;
+
+        private Task listner;
+
+        private bool disposed = false;
 
         #region Constructors
 
@@ -41,6 +55,7 @@ namespace MyServiceLibrary.Implementation
             }
 
             this.Role = role;
+            CreateHelper();
             this.IdGenerator = (Func<int>)idGenerator.Clone();
         }
 
@@ -52,46 +67,57 @@ namespace MyServiceLibrary.Implementation
         {
             this.InitializeGenerator();
             this.Role = role;
+            CreateHelper();
+            
         }
 
         /// <summary>
-        /// Constructor with entering master service
+        /// Constructor with entering identifier generator, end point and service role
         /// </summary>
-        /// <param name="master">Master service</param>
-        public UserService(UserService master)
+        /// <param name="idGenerator">Identifier generator</param>
+        /// <param name="role">Service role</param>
+        /// <param name="endPoint">End point of service</param>
+        public UserService(Func<int> idGenerator, IPEndPoint endPoint, ServiceRoles role = ServiceRoles.Slave)
         {
-            if (master == null)
+            if (idGenerator == null)
             {
-                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(master)}");
-                throw new ArgumentNullException(nameof(master));
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(idGenerator)}");
+                throw new ArgumentNullException(nameof(idGenerator));
             }
 
-            if (master.CheckPermission(ServiceRoles.Master))
+            if(endPoint == null)
             {
-                throw new AccesPermissionException();
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(endPoint)}");
+                throw new ArgumentNullException(nameof(endPoint));
             }
 
-            this.Role = ServiceRoles.Slave;
-            master.AddUser += this.AddItems;
-            master.DeleteUser += this.DeleteItems;
-            this.IdGenerator = (Func<int>)master.IdGenerator.Clone();
+            this.endPoint = endPoint;
+            this.Role = role;
+            CreateHelper();
+            this.IdGenerator = (Func<int>)idGenerator.Clone();
         }
 
+        /// <summary>
+        /// Constructor with entering service role and end point 
+        /// </summary>
+        /// <param name="role">Service role</param>
+        /// <param name="endPoint">End point of service</param>
+        public UserService(ServiceRoles role, IPEndPoint endPoint)
+        {
+            if (endPoint == null)
+            {
+                NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(endPoint)}");
+                throw new ArgumentNullException(nameof(endPoint));
+            }
+
+            this.endPoint = endPoint;
+            this.InitializeGenerator();
+            this.Role = role;
+            CreateHelper();
+
+        }
         #endregion
 
-        #region Public Events
-
-        /// <summary>
-        /// Add user event
-        /// </summary>
-        public event EventHandler<AddItemEventArgs<User>> AddUser = delegate { };
-
-        /// <summary>
-        /// Delete user event
-        /// </summary>
-        public event EventHandler<DeleteItemEventArgs<User>> DeleteUser = delegate { };
-
-        #endregion
 
         #region Public Properties
 
@@ -125,6 +151,8 @@ namespace MyServiceLibrary.Implementation
                 NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(users)}");
                 throw new ArgumentNullException(nameof(users));
             }
+
+            AddHelper(users);
         }
 
         /// <summary>
@@ -190,19 +218,8 @@ namespace MyServiceLibrary.Implementation
                 throw new ArgumentNullException(nameof(serializer));
             }
 
-            if (!ConfigurationManager.AppSettings.AllKeys.Contains("FileName"))
-            {
-                NlogLogger.Logger.Error("No file name");
-                throw new ArgumentNullException("Please add file name into App.config");
-            }
+            string fileName = GetValueFromConfig.Get("FileName");
 
-            string fileName = ConfigurationManager.AppSettings["FileName"].ToString();
-
-            if (fileName == string.Empty)
-            {
-                NlogLogger.Logger.Error("Empry file name");
-                throw new ArgumentException("File name must not be empty!");
-            }
 
             if (this.CheckPermission(ServiceRoles.Master))
             {
@@ -212,38 +229,42 @@ namespace MyServiceLibrary.Implementation
             serializer.Serialize(fileName, this.users.ToArray());
         }
 
+        /// <summary>
+        /// Method dispose service
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
         #endregion
 
-        #region Protected Methods
+        #region Finilizer and Dispose
 
-        /// <summary>
-        /// Method is called when new user was added
-        /// </summary>
-        /// <param name="e">Event args</param>
-        protected virtual void OnAddUser(AddItemEventArgs<User> e)
+        protected virtual void Dispose(bool disposing)
         {
-            if (this.AddUser != null)
+            if (!disposed)
             {
-                this.AddUser(this, e);
-            }
+                if (disposing)
+                {
+                    GC.SuppressFinalize(this);
+                }
+                Master master = RegisterServicesConfig.GetConfig().Master;
+                IPEndPoint masterEndPoint = (IPEndPoint)master[0];
+                this.SendMessageFromSocket(masterEndPoint, Serialize(endPoint).GetAwaiter().GetResult());
+                this.SendMessageFromSocket(endPoint, Encoding.UTF8.GetBytes("<End>"));
 
-            foreach (User us in e.ItemsToAdd)
-            {
-                NlogLogger.Logger.Info($"User {us.FirstName} {us.LastName} added");
+
+                disposed = true;
             }
         }
 
         /// <summary>
-        /// Method is called when new user was removed
+        /// Finilizer for service
         /// </summary>
-        /// <param name="e">Event args</param>
-        protected virtual void OnDeleteUser(DeleteItemEventArgs<User> e)
+        ~UserService()
         {
-            if (this.DeleteUser != null)
-            {
-                this.DeleteUser(this, e);
-            }
-            NlogLogger.Logger.Info("Users deleted by predicate");
+            Dispose(false);
         }
 
         #endregion
@@ -255,9 +276,33 @@ namespace MyServiceLibrary.Implementation
             this.IdGenerator += () => { return id++; };
         }
 
+        private void CreateHelper()
+        {
+            listner = Task.Run(() => Listen(endPoint));
+
+            if (TryPermission(ServiceRoles.Master))
+            {
+                slaves = new List<IPEndPoint>();
+            }
+            else
+            {
+                Master master = RegisterServicesConfig.GetConfig().Master;
+                IPEndPoint masterEndPoint = (IPEndPoint)master[0];
+                this.SendMessageFromSocket(masterEndPoint, Serialize(endPoint).GetAwaiter().GetResult());
+            }
+
+           
+
+        }
+
+        private bool TryPermission(ServiceRoles role)
+        {
+            return this.Role == role;
+        }
+
         private bool CheckPermission(ServiceRoles role)
         {
-            if (this.Role == role)
+            if (TryPermission(role))
             {
                 return false;
             }
@@ -266,27 +311,25 @@ namespace MyServiceLibrary.Implementation
             return true;
         }
 
-        /// <summary>
-        /// Method is called when master adds users
-        /// </summary>
-        /// <param name="sender">Master</param>
-        /// <param name="e">Event arguments</param>
-        private void AddItems(object sender, AddItemEventArgs<User> e)
+        private void OnAddUser(AddItemEventArgs<User> e)
         {
-            foreach (var user in e.ItemsToAdd)
-            {
-                this.AddHelper(user);
-            }
+            NotifySlaves(Serialize(e.UsersToAdd).GetAwaiter().GetResult()).GetAwaiter().GetResult();
+            NlogLogger.Logger.Info($"Some users added");
         }
 
-        /// <summary>
-        /// Method is called when master deletes users
-        /// </summary>
-        /// <param name="sender">Master</param>
-        /// <param name="e">Event arguments</param>
-        private void DeleteItems(object sender, DeleteItemEventArgs<User> e)
+        private void OnDeleteUser(DeleteItemEventArgs<User> e)
         {
-            this.DeleteHelper(e.Predicate);
+            NotifySlaves(Serialize(e.UsersToRemove).GetAwaiter().GetResult()).GetAwaiter().GetResult(); 
+            NlogLogger.Logger.Info("Users deleted by predicate");
+        }
+
+        private async Task NotifySlaves(byte[] data)
+        {
+            await Task.Run(() =>
+            {
+                foreach (var slaveEndPoint in slaves)
+                    SendMessageFromSocket(slaveEndPoint, data);
+            });
         }
 
         private void AddHelper(IEnumerable<User> users)
@@ -296,9 +339,9 @@ namespace MyServiceLibrary.Implementation
                 this.AddHelper(user);
             }
 
-            if (this.Role == ServiceRoles.Master)
+            if (TryPermission(ServiceRoles.Master))
             {
-                this.OnAddUser(new AddItemEventArgs<User>(users));
+                this.OnAddUser(new AddItemEventArgs<User>(users.ToList()));
             }
         }
 
@@ -322,7 +365,7 @@ namespace MyServiceLibrary.Implementation
                 throw new ExistUserException();
             }
 
-            if (this.Role == ServiceRoles.Master)
+            if (TryPermission(ServiceRoles.Master))
             {
                 user.Id = this.IdGenerator();
             }
@@ -340,11 +383,108 @@ namespace MyServiceLibrary.Implementation
 
             this.users.RemoveAll(predicate);
 
-            if (this.Role == ServiceRoles.Master)
+            if (TryPermission(ServiceRoles.Master))
             {
                 this.OnDeleteUser(new DeleteItemEventArgs<User>(predicate));
             }
         }
+
+        private void SendMessageFromSocket(IPEndPoint ipEndPoint, byte[] data)
+        {
+            Socket sender = new Socket(ipEndPoint.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            sender.Connect(ipEndPoint);
+
+            int bytesSent = sender.Send(data,data.Length,SocketFlags.Partial);
+
+            sender.Shutdown(SocketShutdown.Both);
+            sender.Close();
+        }
+
+        private void Listen(IPEndPoint ipEndPoint)
+        {
+
+            Socket sListener = new Socket(ipEndPoint.Address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+            sListener.Bind(ipEndPoint);
+            sListener.Listen(10);
+            while (true)
+            {
+                Socket handler = sListener.Accept();
+                byte[] bytes = new byte[2000];
+                int length = handler.Receive(bytes);
+                Console.WriteLine($"Message received");
+                if (Encoding.UTF8.GetString(bytes, 0,length) == "<End>")
+                {
+                    Console.WriteLine("End");
+                    handler.Shutdown(SocketShutdown.Both);
+                    handler.Close();
+                    break;
+                }
+                if (TryPermission(ServiceRoles.Master))
+                {
+                    Console.WriteLine("Master");
+                    AddOrRemoveSlave(bytes);
+                }
+                else
+                {
+                    Console.WriteLine("Slave");
+                    UpdateUsers(bytes);
+                }
+
+                handler.Shutdown(SocketShutdown.Both);
+                handler.Close();
+            }
+
+        }
+
+
+        private void AddOrRemoveSlave(byte[] data)
+        {
+            IPEndPoint slaveEndPoint = DeserializeClass<IPEndPoint>(data).GetAwaiter().GetResult();
+            if (slaveEndPoint != null)
+            {
+                if (slaves.Contains(slaveEndPoint))
+                {
+                    slaves.Remove(slaveEndPoint);
+                }
+                else
+                {
+                    slaves.Add(slaveEndPoint);
+                    SendMessageFromSocket(slaveEndPoint, Serialize(users).GetAwaiter().GetResult());
+                }
+
+                return;
+            }
+        }
+
+        private void UpdateUsers(byte[] data)
+        {
+            List<User> users = DeserializeClass<List<User>>(data).GetAwaiter().GetResult();
+            if(users != null)
+            {
+                AddHelper(users);
+                return;
+            }
+
+            DeleteHelper(DeserializeClass<Predicate<User>>(data).GetAwaiter().GetResult());
+        }
+
+        private async Task<byte[]> Serialize<T> (T obj)
+        {
+            return await Task.Run(() => CustomSerializer.Serialize(obj));
+        }
+        private async Task<T> DeserializeClass<T>(byte[] data)
+            where T : class
+        {
+            return await Task.Run(() => CustomSerializer.DeserializeClass<T>(data));
+        }
+
+        private async Task<T> DeserializeStruct<T>(byte[] data)
+            where T : struct
+        {
+            return await Task.Run(() => CustomSerializer.DeserializeStruct<T>(data));
+        }
+
         #endregion
     }
 }

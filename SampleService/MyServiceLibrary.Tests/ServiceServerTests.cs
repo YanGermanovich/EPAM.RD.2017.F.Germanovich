@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyServiceLibrary.Implementation;
+using MyServiceLibrary.CustomSection;
 
 namespace MyServiceLibrary.Tests
 {
@@ -16,7 +17,7 @@ namespace MyServiceLibrary.Tests
             ConfigurationManager.AppSettings.Set("SlavesCount", "-1");
             try
             {
-                var server = new ServiceServer<UserService>();
+                var server = new MasterSlaveService<UserService>();
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -30,32 +31,48 @@ namespace MyServiceLibrary.Tests
         public void Create_WhithNullGenerator_ExceptionThrown()
         {
             Func<int> idGen = null;
-            var server = new ServiceServer<UserService>(idGen);
+            var server = new MasterSlaveService<UserService>(idGen);
         }
 
         [TestMethod]
         public void Add()
         {
-            var server = new ServiceServer<UserService>();
+            var slaves = RegisterServicesConfig.GetConfig().Master;
+            var server = new MasterSlaveService<UserService>();
             var us = new User()
             {
-                DateOfBirth = DateTime.Now,
+                DateOfBirth = new DateTime(1998,7,4),
                 FirstName = "Ivan",
                 LastName = "Ivanov"
             };
 
             server.Master.Add(us);
 
-            Assert.IsTrue(server.Slaves.All(s => s.Search((u) => u.Equals(us)).Count == 1));
+            foreach(var slave in server.Slaves)
+            {
+                var users = slave.Search((u) =>
+                {
+                    User user = new User()
+                    {
+                        DateOfBirth = new DateTime(1998, 7, 4),
+                        FirstName = "Ivan",
+                        LastName = "Ivanov"
+                    };
+                    return u.Equals(user);
+                });
+                if (users.Count != 1)
+                    Assert.Fail();
+            }
+            //Assert.IsTrue(slaves.All(s => s.Search((u) => u.Equals(us)).Count == 1));
         }
 
         [TestMethod]
         public void Delete()
         {
-            var server = new ServiceServer<UserService>();
+            var server = new MasterSlaveService<UserService>();
             var us = new User()
             {
-                DateOfBirth = DateTime.Now,
+                DateOfBirth = new DateTime(1998, 7, 4),
                 FirstName = "Ivan",
                 LastName = "Ivanov"
             };
@@ -69,9 +86,17 @@ namespace MyServiceLibrary.Tests
 
             server.Master.Add(us);
             server.Master.Add(us1);
-            server.Master.Delete(u => u.Equals(us));
+            server.Master.Delete(u => {
+                var user = new User()
+                {
+                    DateOfBirth = new DateTime(1998, 7, 4),
+                    FirstName = "Ivan",
+                    LastName = "Ivanov"
+                };
+                return u.Equals(user);
+            });
 
-            Assert.IsTrue(server.Slaves.All(s => (s.Search(u => u.Equals(us1)).Count == 1) && s.Search(u => true).Count == 1));
+            Assert.IsTrue(server.Slaves.All(s => (s.Search(u => u.FirstName=="Pavel").Count == 1) && s.Search(u => true).Count == 1));
         }
     }
 }

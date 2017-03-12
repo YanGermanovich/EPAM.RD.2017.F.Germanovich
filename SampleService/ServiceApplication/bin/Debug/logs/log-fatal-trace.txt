@@ -1,2 +1,25 @@
 28.02.2017 13:45:50|Exist user error. User Germanovich Yan 04.07.1998 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
 28.02.2017 15:06:56|Exist user error. User Germanovich Yan 04.07.1998 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 13:52:59|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:53:33|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:54:07|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 15:44:56|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+12.03.2017 15:44:59|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper

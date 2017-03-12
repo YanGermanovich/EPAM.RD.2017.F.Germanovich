@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using MyServiceLibrary.Implementation;
+using LoggerSingleton;
+using MyServiceLibrary.CustomSection;
 
 using static System.Console;
-using LoggerSingleton;
 
 namespace ServiceApplication
 {
@@ -12,31 +13,39 @@ namespace ServiceApplication
     {
         public static void Main(string[] args)
         {
+
             var generator = new IdGenerator();
             Func<int> idGenerator = generator.Generate;
-            var server = new ServiceServer<UserService>(
+            var server = new MasterSlaveService<UserService>(
                                                         idGenerator,
                                                         new XmlSerializeProvider<User[]>());
+            var all = server.Slaves.ElementAt(0).Search((u) => true);
+            Output(all, "All users");
+            //var generator = new IdGenerator();
+            //Func<int> idGenerator = generator.Generate;
+            //var server = new MasterSlaveService<UserService>(
+            //                                            idGenerator,
+            //                                            new XmlSerializeProvider<User[]>());
 
 
-            //var search_byFirstName_deferred = server.Slaves.ElementAt(0).SearchDeferred((user) => user.FirstName == "Ivan");
-            var search_byFirstName = server.Slaves.ElementAt(2).Search((user) => user.FirstName == "Ivan");
+            ////var search_byFirstName_deferred = server.Slaves.ElementAt(0).SearchDeferred((user) => user.FirstName == "Ivan");
+            //var search_byFirstName = server.Slaves.ElementAt(2).Search((user) => user.FirstName == "Ivan");
 
-            server.Master.Delete((user) => user.FirstName == "Ivan");
+            //server.Master.Delete((user) => user.FirstName == "Ivan");
 
-            //var search_byLastName_deferred = server.Slaves.ElementAt(1).SearchDeferred((user) => user.LastName == "Germanovich");
-            var search_byLastName = server.Slaves.ElementAt(2).Search((user) => user.LastName == "Germanovich");
+            ////var search_byLastName_deferred = server.Slaves.ElementAt(1).SearchDeferred((user) => user.LastName == "Germanovich");
+            //var search_byLastName = server.Slaves.ElementAt(2).Search((user) => user.LastName == "Germanovich");
 
-            //Output(search_byFirstName_deferred, "Deferred search users by first name ");
-            Output(search_byFirstName, "Search users by first name");
-           // Output(search_byLastName_deferred, "Deferred search users by last name");
-            Output(search_byLastName, "Search users by last name");
+            ////Output(search_byFirstName_deferred, "Deferred search users by first name ");
+            //Output(search_byFirstName, "Search users by first name");
+            //// Output(search_byLastName_deferred, "Deferred search users by last name");
+            //Output(search_byLastName, "Search users by last name");
 
-            server.Master.SerializeState(new XmlSerializeProvider<User[]>());
+            //server.Master.SerializeState(new XmlSerializeProvider<User[]>());
 
-            //server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
+            ////server.Master.Add(server.Slaves.ElementAt(0).Search(us => true).ElementAt(0));
 
-            server.Dispose();
+            //server.Dispose();
 
             ReadKey();
 

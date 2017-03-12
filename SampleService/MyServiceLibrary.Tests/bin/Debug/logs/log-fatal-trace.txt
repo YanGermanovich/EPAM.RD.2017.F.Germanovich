@@ -1,0 +1,120 @@
+11.03.2017 15:10:26|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 15:10:27|Value cannot be null. Parameter name: master|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 15:10:27|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:10:27|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:10:27|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:10:27|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 15:10:27|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:10:27|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:10:27|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:13:01|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 15:13:02|Value cannot be null. Parameter name: master|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 15:13:02|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:13:02|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:13:02|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:13:02|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 15:13:02|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:13:02|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:13:02|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:21:07|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 15:21:08|Value cannot be null. Parameter name: master|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 15:21:08|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:21:08|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:21:08|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:21:08|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 15:21:08|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:21:08|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:21:08|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+11.03.2017 15:22:58|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 15:22:59|Value cannot be null. Parameter name: master|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 15:22:59|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:22:59|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:22:59|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 15:22:59|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 15:22:59|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:22:59|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 15:22:59|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 17:20:00|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:20:00|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:20:00|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:20:00|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 17:20:00|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 17:20:00|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 17:20:00|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+11.03.2017 17:21:31|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+11.03.2017 17:21:32|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+11.03.2017 17:21:32|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:21:32|Exist user error. User Ivanov Ivan 11.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:21:32|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+11.03.2017 17:21:32|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+11.03.2017 17:21:32|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate|UserServiceTests.Search_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 17:21:32|Value cannot be null. Parameter name: predicate|UserServiceTests.SearchDeferred_NullPredicate_ExceptionThrown => UserService.Search => UserService.SearchDeferred
+11.03.2017 17:21:32|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 12:22:00|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => ServiceServer`1..ctor
+12.03.2017 12:22:01|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 12:22:01|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:22:01|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:22:01|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:22:01|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 12:22:01|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 12:22:01|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 12:22:01|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => MasterSlaveService`1..ctor
+12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 12:52:37|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:52:37|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:52:37|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:52:37|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 12:52:37|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 12:52:37|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 12:52:37|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => MasterSlaveService`1..ctor
+12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 12:53:17|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:53:17|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:53:17|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:53:17|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 12:53:17|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 12:53:17|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 12:53:17|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 12:55:49|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => MasterSlaveService`1..ctor
+12.03.2017 12:55:49|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 12:55:49|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:55:49|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:55:50|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 12:55:50|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 12:55:50|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 12:55:50|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 12:55:50|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => MasterSlaveService`1..ctor
+12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 13:00:12|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 13:00:12|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 13:00:12|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 13:00:12|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 13:00:12|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 13:00:12|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 13:00:12|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState
+12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => ServiceServerTests.Create_WhithNullGenerator_ExceptionThrown => MasterSlaveService`1..ctor
+12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Create_SlaveWithNullMaster_ExceptionThrown => UserService..ctor
+12.03.2017 14:04:32|Value cannot be null. Parameter name: user|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 14:04:32|Exist user error. User Ivanov Ivan 12.03.2017 is already exist|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 14:04:32|User values cannot be default. Usrt : Ivanov Ivan 01.01.0001|UserService.Add => UserService.AddHelper => UserService.AddHelper
+12.03.2017 14:04:32|Value cannot be null. Parameter name: idGenerator|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullIdGenerator_ExceptionThrown => UserService..ctor
+12.03.2017 14:04:32|Value cannot be null. Parameter name: users|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Add_NullUsersSet_ExceptionThrown => UserService.Add
+12.03.2017 14:04:32|Value cannot be null. Parameter name: predicate|UserServiceTests.Delete_NullPredicate_ExceptionThrown => UserService.Delete => UserService.DeleteHelper
+12.03.2017 14:04:32|Value cannot be null. Parameter name: serializer|RuntimeMethodHandle.InvokeMethod => UserServiceTests.Serialize_NullProvider_ExceptionThrown => UserService.SerializeState

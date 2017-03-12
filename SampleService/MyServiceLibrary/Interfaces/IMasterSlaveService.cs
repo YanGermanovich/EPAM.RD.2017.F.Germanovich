@@ -5,7 +5,7 @@ namespace MyServiceLibrary.Interfaces
     /// <summary>
     /// Interface provide function of server 
     /// </summary>
-    public interface IServiceServer<T>
+    public interface IMasterSlaveService<T>
     {
         /// <summary>
         /// Property returns all slaves

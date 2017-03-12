@@ -20,12 +20,6 @@ namespace MyServiceLibrary.Tests
             var serive = new UserService(null);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(AccesPermissionException))]
-        public void Create_SlaveWithSlaveAsMaster_ExceptionThrown()
-        {
-            var serive = new UserService(new UserService());
-        }
 
         #endregion
 
@@ -157,7 +151,7 @@ namespace MyServiceLibrary.Tests
             };
 
             service.Add(us);
-            service.Delete((user) => user.DateOfBirth >= new DateTime(1999, 28, 02));
+            service.Delete((user) => user.DateOfBirth >= new DateTime(1999, 7, 4));
         }
 
         [TestMethod]

@@ -73,39 +73,6 @@
             <param name="message">Exception message</param>
             <param name="inner">Inner exception</param>
         </member>
-        <member name="T:MyServiceLibrary.EventArguments.AddItemEventArgs`1">
-            <summary>
-            Arguments of add item event
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.EventArguments.AddItemEventArgs`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
-            <summary>
-            Constructor with entering items to add
-            </summary>
-            <param name="itemsToAdd">items to add </param>
-        </member>
-        <member name="P:MyServiceLibrary.EventArguments.AddItemEventArgs`1.ItemsToAdd">
-            <summary>
-            Property of item to add 
-            </summary>
-        </member>
-        <member name="T:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1">
-            <summary>
-            Arguments of delete item event
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.#ctor(System.Predicate{`0})">
-            <summary>
-            Constructor with entering predicate for deleting
-            </summary>
-            <param name="predicate">predicate for deleting</param>
-        </member>
-        <member name="P:MyServiceLibrary.EventArguments.DeleteItemEventArgs`1.Predicate">
-            <summary>
-            Property of predicate for deleting
-            </summary>
-        </member>
         <member name="T:MyServiceLibrary.Helpers.CheckDefaultValueAttribute">
             <summary>
             Property has attribute when it should be checked on default value
@@ -159,57 +126,57 @@
             <param name="fileName">File name</param>
             <param name="extraTypes">Extra types</param>
         </member>
-        <member name="T:MyServiceLibrary.Implementation.ServiceServer`1">
+        <member name="T:MyServiceLibrary.Implementation.MasterSlaveService`1">
             <summary>
             Server of user service
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(System.Func{System.Int32})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(System.Func{System.Int32})">
             <summary>
             Constructor with entering\ id generator
             </summary>
             <param name="idGenerator">Identifier generator</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(System.Func{System.Int32},MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(System.Func{System.Int32},MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
             <summary>
             Constructor with entering serializer and id generator
             </summary>
             <param name="idGenerator">Identifier generator</param>
             <param name="serializerProvider">Serialization provider</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.#ctor(MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
             <summary>
             Constructor with entering serializer
             </summary>
             <param name="serializerProvider">Serialization provider</param>
         </member>
-        <member name="P:MyServiceLibrary.Implementation.ServiceServer`1.Master">
+        <member name="P:MyServiceLibrary.Implementation.MasterSlaveService`1.Master">
             <summary>
             Property returns all slaves
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.Implementation.ServiceServer`1.Slaves">
+        <member name="P:MyServiceLibrary.Implementation.MasterSlaveService`1.Slaves">
             <summary>
             Property returns master entity
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Dispose">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Dispose">
             <summary>
             Method unload all domains
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Dispose(System.Boolean)">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Dispose(System.Boolean)">
             <summary>
             Method unload all domins and suppress finalize 
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.ServiceServer`1.Finalize">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Finalize">
             <summary>
             Finilazire for server
             </summary>
@@ -237,21 +204,20 @@
             </summary>
             <param name="role">Service role</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(MyServiceLibrary.Implementation.UserService)">
+        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(System.Func{System.Int32},System.Net.IPEndPoint,MyServiceLibrary.Implementation.ServiceRoles)">
             <summary>
-            Constructor with entering master service
+            Constructor with entering identifier generator, end point and service role
             </summary>
-            <param name="master">Master service</param>
+            <param name="idGenerator">Identifier generator</param>
+            <param name="role">Service role</param>
+            <param name="endPoint">End point of service</param>
         </member>
-        <member name="E:MyServiceLibrary.Implementation.UserService.AddUser">
+        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(MyServiceLibrary.Implementation.ServiceRoles,System.Net.IPEndPoint)">
             <summary>
-            Add user event
+            Constructor with entering service role and end point 
             </summary>
-        </member>
-        <member name="E:MyServiceLibrary.Implementation.UserService.DeleteUser">
-            <summary>
-            Delete user event
-            </summary>
+            <param name="role">Service role</param>
+            <param name="endPoint">End point of service</param>
         </member>
         <member name="P:MyServiceLibrary.Implementation.UserService.IdGenerator">
             <summary>
@@ -301,31 +267,15 @@
             </summary>
             <param name="serializer"></param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.OnAddUser(MyServiceLibrary.EventArguments.AddItemEventArgs{MyServiceLibrary.Implementation.User})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Dispose">
             <summary>
-            Method is called when new user was added
+            Method dispose service
             </summary>
-            <param name="e">Event args</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.OnDeleteUser(MyServiceLibrary.EventArguments.DeleteItemEventArgs{MyServiceLibrary.Implementation.User})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.Finalize">
             <summary>
-            Method is called when new user was removed
+            Finilizer for service
             </summary>
-            <param name="e">Event args</param>
-        </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.AddItems(System.Object,MyServiceLibrary.EventArguments.AddItemEventArgs{MyServiceLibrary.Implementation.User})">
-            <summary>
-            Method is called when master adds users
-            </summary>
-            <param name="sender">Master</param>
-            <param name="e">Event arguments</param>
-        </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.DeleteItems(System.Object,MyServiceLibrary.EventArguments.DeleteItemEventArgs{MyServiceLibrary.Implementation.User})">
-            <summary>
-            Method is called when master deletes users
-            </summary>
-            <param name="sender">Master</param>
-            <param name="e">Event arguments</param>
         </member>
         <member name="T:MyServiceLibrary.Implementation.User">
             <summary>
@@ -455,17 +405,17 @@
             </summary>
             <param name="serializer"></param>
         </member>
-        <member name="T:MyServiceLibrary.Interfaces.IServiceServer`1">
+        <member name="T:MyServiceLibrary.Interfaces.IMasterSlaveService`1">
             <summary>
             Interface provide function of server 
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.Interfaces.IServiceServer`1.Slaves">
+        <member name="P:MyServiceLibrary.Interfaces.IMasterSlaveService`1.Slaves">
             <summary>
             Property returns all slaves
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.Interfaces.IServiceServer`1.Master">
+        <member name="P:MyServiceLibrary.Interfaces.IMasterSlaveService`1.Master">
             <summary>
             Property returns master entity
             </summary>
