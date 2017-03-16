@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyServiceLibrary.Implementation;
 using MyServiceLibrary.CustomSection;
+using MyServiceLibrary.InterfacesAndAbstract;
 
 namespace MyServiceLibrary.Tests
 {
@@ -17,7 +18,7 @@ namespace MyServiceLibrary.Tests
             ConfigurationManager.AppSettings.Set("SlavesCount", "-1");
             try
             {
-                var server = new MasterSlaveService<UserService>();
+                var server = new MasterSlavesService<User,UserTcpService,UserService>();
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -30,15 +31,15 @@ namespace MyServiceLibrary.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Create_WhithNullGenerator_ExceptionThrown()
         {
-            Func<int> idGen = null;
-            var server = new MasterSlaveService<UserService>(idGen);
+            IIdGenerator idGen = null;
+            var server = new MasterSlavesService<User, UserTcpService, UserService>(idGen);
         }
 
         [TestMethod]
         public void Add()
         {
             var slaves = RegisterServicesConfig.GetConfig().Master;
-            var server = new MasterSlaveService<UserService>();
+            var server = new MasterSlavesService<User, UserTcpService, UserService>();
             var us = new User()
             {
                 DateOfBirth = new DateTime(1998,7,4),
@@ -69,7 +70,7 @@ namespace MyServiceLibrary.Tests
         [TestMethod]
         public void Delete()
         {
-            var server = new MasterSlaveService<UserService>();
+            var server = new MasterSlavesService<User, UserTcpService, UserService>();
             var us = new User()
             {
                 DateOfBirth = new DateTime(1998, 7, 4),

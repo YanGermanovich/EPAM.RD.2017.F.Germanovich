@@ -5,6 +5,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyServiceLibrary.CustomExceptions;
 using MyServiceLibrary.Implementation;
+using MyServiceLibrary.InterfacesAndAbstract;
 
 namespace MyServiceLibrary.Tests
 {
@@ -65,8 +66,7 @@ namespace MyServiceLibrary.Tests
         [TestMethod]
         public void Add_ValidtUsersWithValidGenerator()
         {
-            int i = 0;
-            var service = new UserService(() => i++, ServiceRoles.Master);
+            var service = new UserService(new CustomIdGenerator(), ServiceRoles.Master);
             var us = new User()
             {
                 DateOfBirth = DateTime.Now,
@@ -88,8 +88,7 @@ namespace MyServiceLibrary.Tests
 
         public void Add_InSlaveService_ExceptionThrown()
         {
-            int i = 0;
-            var service = new UserService(() => i++, ServiceRoles.Slave);
+            var service = new UserService(new CustomIdGenerator(), ServiceRoles.Slave);
             var us = new User()
             {
                 DateOfBirth = DateTime.Now,
@@ -114,7 +113,7 @@ namespace MyServiceLibrary.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void Add_NullIdGenerator_ExceptionThrown()
         {
-            Func<int> idGenerator = null;
+            IIdGenerator idGenerator = null;
             var service = new UserService(idGenerator);
         }
 

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SampleService",
+    "\\SampleService\\MyServiceLibrary",
+    "\\SampleService\\MyServiceLibrary\\Implementation"
+  ],
+  "SelectedNode": "\\SampleService\\MyServiceLibrary\\MyServiceLibrary.csproj",
+  "PreviewInSolutionExplorer": false
+}

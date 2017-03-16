@@ -27,6 +27,30 @@
             <param name="message">Exception message</param>
             <param name="inner">Inner exception</param>
         </member>
+        <member name="T:MyServiceLibrary.CustomExceptions.InvalidApplicationMode">
+            <summary>
+            Custom exception. Thrown when try to get access 
+            to application functions of other application working mode
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.CustomExceptions.InvalidApplicationMode.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.CustomExceptions.InvalidApplicationMode.#ctor(System.String)">
+            <summary>
+            Constructor with exception message
+            </summary>
+            <param name="message">Exception message</param>
+        </member>
+        <member name="M:MyServiceLibrary.CustomExceptions.InvalidApplicationMode.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor with exception message and inner exception
+            </summary>
+            <param name="message">Exception message</param>
+            <param name="inner">Inner exception</param>
+        </member>
         <member name="T:MyServiceLibrary.ExistUserException">
             <summary>
             Custom exception. Thrown when try to add user that have already added 
@@ -91,6 +115,33 @@
             <param name="item">Item to check</param>
             <returns>True if item have one or more property with default value</returns>
         </member>
+        <member name="T:MyServiceLibrary.Implementation.CustomIdGenerator">
+            <summary>
+            Class provide function of id generator
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Implementation.CustomIdGenerator.NextValue">
+            <summary>
+            Id start value
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.CustomIdGenerator.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.CustomIdGenerator.#ctor(System.Int32)">
+            <summary>
+            Constructor with entering id start value
+            </summary>
+            <param name="idStartValue">id start value</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.CustomIdGenerator.GetId">
+            <summary>
+            Method returns new unique id
+            </summary>
+            <returns>Id</returns>
+        </member>
         <member name="T:MyServiceLibrary.Implementation.ServiceRoles">
             <summary>
             Enumeration of services roles
@@ -105,6 +156,67 @@
             <summary>
             Role slave
             </summary>
+        </member>
+        <member name="T:MyServiceLibrary.Implementation.UserTcpService">
+            <summary>
+            Class of communication using TCP service .
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.#ctor(MyServiceLibrary.Implementation.UserService,System.Net.IPEndPoint)">
+            <summary>
+            Constructor with enteriing user service and its end point 
+            </summary>
+            <param name="service">User service</param>
+            <param name="endPoint">Service endPoint</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Add(System.Collections.Generic.IEnumerable{MyServiceLibrary.Implementation.User})">
+            <summary>
+            Method adds set of some items to service.
+            </summary>
+            <param name="items">Set of some items</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Add(MyServiceLibrary.Implementation.User)">
+            <summary>
+            Method adds some item to service.
+            </summary>
+            <param name="item">Item</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Delete(System.Predicate{MyServiceLibrary.Implementation.User})">
+            <summary>
+            Method removes items which matches the predicate. 
+            </summary>
+            <param name="predicate">Predicate</param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Dispose">
+            <summary>
+            Method dispose service
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Search(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
+            <summary>
+            Method returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.SearchDeferred(System.Func{MyServiceLibrary.Implementation.User,System.Boolean})">
+            <summary>
+            Method deferred returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.SerializeState(MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+            <summary>
+            Method serialize actual state using current serializer
+            </summary>
+            <param name="serializer"></param>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserTcpService.Dispose(System.Boolean)">
+            <summary>
+            Method dispose all resources
+            </summary>
+            <param name="disposing"></param>
         </member>
         <member name="T:MyServiceLibrary.Implementation.XmlSerializeProvider`1">
             <summary>
@@ -126,57 +238,57 @@
             <param name="fileName">File name</param>
             <param name="extraTypes">Extra types</param>
         </member>
-        <member name="T:MyServiceLibrary.Implementation.MasterSlaveService`1">
+        <member name="T:MyServiceLibrary.Implementation.MasterSlavesService`3">
             <summary>
             Server of user service
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.#ctor">
             <summary>
             Default constructor
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(System.Func{System.Int32})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.#ctor(MyServiceLibrary.InterfacesAndAbstract.IIdGenerator)">
             <summary>
-            Constructor with entering\ id generator
+            Constructor with entering id generator
             </summary>
             <param name="idGenerator">Identifier generator</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(System.Func{System.Int32},MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.#ctor(MyServiceLibrary.InterfacesAndAbstract.IIdGenerator,MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{`0[]})">
             <summary>
             Constructor with entering serializer and id generator
             </summary>
             <param name="idGenerator">Identifier generator</param>
             <param name="serializerProvider">Serialization provider</param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.#ctor(MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.#ctor(MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{`0[]})">
             <summary>
             Constructor with entering serializer
             </summary>
             <param name="serializerProvider">Serialization provider</param>
         </member>
-        <member name="P:MyServiceLibrary.Implementation.MasterSlaveService`1.Master">
-            <summary>
-            Property returns all slaves
-            </summary>
-        </member>
-        <member name="P:MyServiceLibrary.Implementation.MasterSlaveService`1.Slaves">
-            <summary>
-            Property returns master entity
-            </summary>
-        </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Dispose">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.Dispose">
             <summary>
             Method unload all domains
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Dispose(System.Boolean)">
+        <member name="P:MyServiceLibrary.Implementation.MasterSlavesService`3.Master">
+            <summary>
+            Property returns all slaves
+            </summary>
+        </member>
+        <member name="P:MyServiceLibrary.Implementation.MasterSlavesService`3.Slaves">
+            <summary>
+            Property returns master entity
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.Dispose(System.Boolean)">
             <summary>
             Method unload all domins and suppress finalize 
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.MasterSlaveService`1.Finalize">
+        <member name="M:MyServiceLibrary.Implementation.MasterSlavesService`3.Finalize">
             <summary>
             Finilazire for server
             </summary>
@@ -191,7 +303,7 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(System.Func{System.Int32},MyServiceLibrary.Implementation.ServiceRoles)">
+        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(MyServiceLibrary.InterfacesAndAbstract.IIdGenerator,MyServiceLibrary.Implementation.ServiceRoles)">
             <summary>
             Constructor with entering of identifier generator and service role
             </summary>
@@ -203,26 +315,6 @@
             Constructor with entering of service role
             </summary>
             <param name="role">Service role</param>
-        </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(System.Func{System.Int32},System.Net.IPEndPoint,MyServiceLibrary.Implementation.ServiceRoles)">
-            <summary>
-            Constructor with entering identifier generator, end point and service role
-            </summary>
-            <param name="idGenerator">Identifier generator</param>
-            <param name="role">Service role</param>
-            <param name="endPoint">End point of service</param>
-        </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.#ctor(MyServiceLibrary.Implementation.ServiceRoles,System.Net.IPEndPoint)">
-            <summary>
-            Constructor with entering service role and end point 
-            </summary>
-            <param name="role">Service role</param>
-            <param name="endPoint">End point of service</param>
-        </member>
-        <member name="P:MyServiceLibrary.Implementation.UserService.IdGenerator">
-            <summary>
-            Generator of user id
-            </summary>
         </member>
         <member name="P:MyServiceLibrary.Implementation.UserService.Role">
             <summary>
@@ -261,7 +353,7 @@
             <param name="predicate">Predicate</param>
             <returns>Users which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Implementation.UserService.SerializeState(MyServiceLibrary.Interfaces.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
+        <member name="M:MyServiceLibrary.Implementation.UserService.SerializeState(MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{MyServiceLibrary.Implementation.User[]})">
             <summary>
             Method serialize actual state using current serializer
             </summary>
@@ -271,6 +363,12 @@
             <summary>
             Method dispose service
             </summary>
+        </member>
+        <member name="M:MyServiceLibrary.Implementation.UserService.Dispose(System.Boolean)">
+            <summary>
+            Method disposes resources
+            </summary>
+            <param name="disposing"></param>
         </member>
         <member name="M:MyServiceLibrary.Implementation.UserService.Finalize">
             <summary>
@@ -337,87 +435,164 @@
             </summary>
             <returns>result string</returns>
         </member>
-        <member name="T:MyServiceLibrary.Interfaces.ISerializerProvider`1">
+        <member name="T:MyServiceLibrary.InterfacesAndAbstract.IIdGenerator">
+            <summary>
+            Interface provide function of id generator
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IIdGenerator.GetId">
+            <summary>
+            Method returns new unique id
+            </summary>
+            <returns>Id</returns>
+        </member>
+        <member name="P:MyServiceLibrary.InterfacesAndAbstract.IIdGenerator.NextValue">
+            <summary>
+            Id start value
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider`1">
             <summary>
             Interface provide function of serializer
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.ISerializerProvider`1.Serialize(System.String,`0)">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider`1.Serialize(System.String,`0)">
             <summary>
             Methods serialize object in the file
             </summary>
             <param name="fileName">Object will be serialize in this file</param>
             <param name="obj">Object to serialize</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.ISerializerProvider`1.Deserialize(System.String,System.Type[])">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider`1.Deserialize(System.String,System.Type[])">
             <summary>
             Methods deserialize object from the file
             </summary>
             <param name="fileName">Object will be serialize in this file</param>
             <param name="extraTypes">Extra Types</param>
         </member>
-        <member name="T:MyServiceLibrary.Interfaces.IService`1">
+        <member name="T:MyServiceLibrary.InterfacesAndAbstract.IService`1">
             <summary>
             Generic interface. It provides functions of service.
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="P:MyServiceLibrary.Interfaces.IService`1.Role">
+        <member name="P:MyServiceLibrary.InterfacesAndAbstract.IService`1.Role">
             <summary>
             Property of service roles
             </summary>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Add(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.Add(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             Method adds set of some items to service.
             </summary>
             <param name="items">Set of some items</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Add(`0)">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.Add(`0)">
             <summary>
             Method adds some item to service.
             </summary>
             <param name="item">Item</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Delete(System.Predicate{`0})">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.Delete(System.Predicate{`0})">
             <summary>
             Method removes items which matches the predicate. 
             </summary>
             <param name="predicate">Predicate</param>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.SearchDeferred(System.Func{`0,System.Boolean})">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.SearchDeferred(System.Func{`0,System.Boolean})">
             <summary>
             Method deferred returns items which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Items which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.Search(System.Func{`0,System.Boolean})">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.Search(System.Func{`0,System.Boolean})">
             <summary>
             Method returns items which matches the predicate
             </summary>
             <param name="predicate">Predicate</param>
             <returns>Items which matches the predicate</returns>
         </member>
-        <member name="M:MyServiceLibrary.Interfaces.IService`1.SerializeState(MyServiceLibrary.Interfaces.ISerializerProvider{`0[]})">
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.IService`1.SerializeState(MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{`0[]})">
             <summary>
             Method serialize actual state using current serializer
             </summary>
             <param name="serializer"></param>
         </member>
-        <member name="T:MyServiceLibrary.Interfaces.IMasterSlaveService`1">
+        <member name="T:MyServiceLibrary.InterfacesAndAbstract.IMasterSlaveService`1">
             <summary>
             Interface provide function of server 
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.Interfaces.IMasterSlaveService`1.Slaves">
+        <member name="P:MyServiceLibrary.InterfacesAndAbstract.IMasterSlaveService`1.Slaves">
             <summary>
             Property returns all slaves
             </summary>
         </member>
-        <member name="P:MyServiceLibrary.Interfaces.IMasterSlaveService`1.Master">
+        <member name="P:MyServiceLibrary.InterfacesAndAbstract.IMasterSlaveService`1.Master">
             <summary>
             Property returns master entity
+            </summary>
+        </member>
+        <member name="T:MyServiceLibrary.InterfacesAndAbstract.TcpService`1">
+            <summary>
+            Generic interface. It provides functions of service which communicate using TCP.
+            </summary>
+            <typeparam name="T">Type of items</typeparam>
+            <typeparam name="S">Service of items</typeparam>
+        </member>
+        <member name="F:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.service">
+            <summary>
+            Service of items
+            </summary>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.#ctor(MyServiceLibrary.InterfacesAndAbstract.IService{`0})">
+            <summary>
+            Constructor with enteriing service with items of T type
+            </summary>
+            <param name="service">Item service</param>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Method adds set of some items to service.
+            </summary>
+            <param name="items">Set of some items</param>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.Add(`0)">
+            <summary>
+            Method adds some item to service.
+            </summary>
+            <param name="item">Item</param>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.Delete(System.Predicate{`0})">
+            <summary>
+            Method removes items which matches the predicate. 
+            </summary>
+            <param name="predicate">Predicate</param>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.SearchDeferred(System.Func{`0,System.Boolean})">
+            <summary>
+            Method deferred returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.Search(System.Func{`0,System.Boolean})">
+            <summary>
+            Method returns items which matches the predicate
+            </summary>
+            <param name="predicate">Predicate</param>
+            <returns>Items which matches the predicate</returns>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.SerializeState(MyServiceLibrary.InterfacesAndAbstract.ISerializerProvider{`0[]})">
+            <summary>
+            Method serialize actual state using current serializer
+            </summary>
+            <param name="serializer"></param>
+        </member>
+        <member name="M:MyServiceLibrary.InterfacesAndAbstract.TcpService`1.Dispose">
+            <summary>
+            Method disposes all resources
             </summary>
         </member>
     </members>

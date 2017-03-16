@@ -6,6 +6,7 @@ using LoggerSingleton;
 using MyServiceLibrary.CustomSection;
 
 using static System.Console;
+using MyServiceLibrary.InterfacesAndAbstract;
 
 namespace ServiceApplication
 {
@@ -14,9 +15,11 @@ namespace ServiceApplication
         public static void Main(string[] args)
         {
 
+            
+
             var generator = new IdGenerator();
-            Func<int> idGenerator = generator.Generate;
-            var server = new MasterSlaveService<UserService>(
+            IIdGenerator idGenerator = new CustomIdGenerator();
+            var server = new MasterSlavesService<User,UserTcpService,UserService>(
                                                         idGenerator,
                                                         new XmlSerializeProvider<User[]>());
             var all = server.Master.Search((u) => true);
@@ -36,6 +39,10 @@ namespace ServiceApplication
                         FirstName = "Ivan",
                         LastName = "Ivanov"
                     });
+                if (str == "S")
+                {
+                    Console.WriteLine((server.Master as UserTcpService).slaves.Count);
+                }
                 all = server.Master.Search((u) => true);
                 Output(all, "All users");
             }

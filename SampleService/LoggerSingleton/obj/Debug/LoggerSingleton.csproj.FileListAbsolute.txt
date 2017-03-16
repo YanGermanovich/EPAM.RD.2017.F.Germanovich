@@ -5,3 +5,10 @@ D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\bin
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.csprojResolveAssemblyReference.cache
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.dll
 D:\Documents\GitHub\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.pdb
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\bin\Debug\LoggerSingleton.dll
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\bin\Debug\LoggerSingleton.pdb
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\bin\Debug\NLog.dll
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\bin\Debug\NLog.xml
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.csprojResolveAssemblyReference.cache
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.dll
+C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\LoggerSingleton\obj\Debug\LoggerSingleton.pdb

@@ -1,473 +1,58 @@
-Info|28.02.2017 13:36:00|ssadasdasdasd
-Info|28.02.2017 13:36:00|User Yan Germanovich added
-Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:00|Users deleted by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:36:00|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:36:40|ssadasdasdasd
-Info|28.02.2017 13:36:40|User Yan Germanovich added
-Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:40|Users deleted by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:36:40|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:38:43|ssadasdasdasd
-Info|28.02.2017 13:40:01|User Yan Germanovich added
-Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:01|Users deleted by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:40:01|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:40:01|Users was searched by this predicate : us => True
-Info|28.02.2017 13:40:18|User Yan Germanovich added
-Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:18|Users deleted by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:40:18|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:40:22|Users was searched by this predicate : us => True
-Info|28.02.2017 13:45:43|User Yan Germanovich added
-Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:45:44|Users deleted by this predicate : user => (user.FirstName == "Ivan")
-Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:45:44|Users was searched by this predicate : user => (user.LastName == "Germanovich")
-Info|28.02.2017 13:45:50|Users was searched by this predicate : us => True
-Fatal|28.02.2017 13:45:50|Exist user error. User Germanovich Yan 04.07.1998 is already exist
-Info|28.02.2017 14:56:53|User Yan Germanovich added
-Info|28.02.2017 14:56:53|User Yan Germanovich added
-Info|28.02.2017 14:56:54|User Yan Germanovich added
-Info|28.02.2017 15:06:15|User Yan Germanovich added
-Info|28.02.2017 15:06:15|Users was searched by predicate 
-Info|28.02.2017 15:06:38|User Yan Germanovich added
-Info|28.02.2017 15:06:38|Users was searched by predicate 
-Info|28.02.2017 15:06:38|Users deleted by predicate
-Info|28.02.2017 15:06:38|Users was searched by predicate 
-Info|28.02.2017 15:06:56|User Yan Germanovich added
-Info|28.02.2017 15:06:56|Users was searched by predicate 
-Info|28.02.2017 15:06:56|Users deleted by predicate
-Info|28.02.2017 15:06:56|Users was searched by predicate 
-Info|28.02.2017 15:06:56|Users was searched by predicate 
-Fatal|28.02.2017 15:06:56|Exist user error. User Germanovich Yan 04.07.1998 is already exist
-Info|28.02.2017 15:07:14|User Yan Germanovich added
-Info|28.02.2017 15:07:14|Users was searched by predicate 
-Info|28.02.2017 15:07:14|Users deleted by predicate
-Info|28.02.2017 15:07:14|Users was searched by predicate 
-Info|28.02.2017 15:07:22|User Yan Germanovich added
-Info|28.02.2017 15:07:22|Users was searched by predicate 
-Info|28.02.2017 15:07:22|Users deleted by predicate
-Info|28.02.2017 15:07:22|Users was searched by predicate 
-Info|28.02.2017 15:07:57|User Yan Germanovich added
-Info|28.02.2017 15:07:57|Users was searched by predicate 
-Info|28.02.2017 15:07:57|Users deleted by predicate
-Info|28.02.2017 15:07:57|Users was searched by predicate 
-Info|28.02.2017 15:08:15|User Yan Germanovich added
-Info|28.02.2017 15:08:15|Users was searched by predicate 
-Info|28.02.2017 15:08:15|Users deleted by predicate
-Info|28.02.2017 15:08:15|Users was searched by predicate 
-Info|11.03.2017 15:12:24|User Yan Germanovich added
-Info|11.03.2017 15:12:24|Users was searched by predicate 
-Info|11.03.2017 15:12:24|Users deleted by predicate
-Info|11.03.2017 15:12:24|Users was searched by predicate 
-Info|11.03.2017 15:12:29|User Yan Germanovich added
-Info|11.03.2017 15:12:29|Users was searched by predicate 
-Info|11.03.2017 15:12:29|Users deleted by predicate
-Info|11.03.2017 15:12:29|Users was searched by predicate 
-Info|11.03.2017 17:43:16|Some users added
-Info|11.03.2017 17:43:16|Users was searched by predicate 
-Info|11.03.2017 17:43:16|Users deleted by predicate
-Info|11.03.2017 17:43:16|Users was searched by predicate 
-Info|12.03.2017 13:52:59|Some users added
-Fatal|12.03.2017 13:52:59|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:52:59|Users was searched by predicate 
-Info|12.03.2017 13:52:59|Users deleted by predicate
-Info|12.03.2017 13:52:59|Users was searched by predicate 
-Info|12.03.2017 13:53:33|Some users added
-Fatal|12.03.2017 13:53:33|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:53:33|Users was searched by predicate 
-Info|12.03.2017 13:53:33|Users deleted by predicate
-Info|12.03.2017 13:53:33|Users was searched by predicate 
-Info|12.03.2017 13:54:07|Some users added
-Fatal|12.03.2017 13:54:07|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:54:07|Users was searched by predicate 
-Info|12.03.2017 13:54:07|Users deleted by predicate
-Info|12.03.2017 13:54:07|Users was searched by predicate 
-Fatal|12.03.2017 13:54:49|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:54:49|Some users added
-Info|12.03.2017 13:55:23|Some users added
-Fatal|12.03.2017 13:55:23|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:56:39|Some users added
-Fatal|12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:56:39|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:56:41|Users was searched by predicate 
-Fatal|12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:57:06|Some users added
-Fatal|12.03.2017 13:57:06|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:57:07|Users was searched by predicate 
-Fatal|12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:57:30|Some users added
-Fatal|12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:57:30|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:57:46|Some users added
-Fatal|12.03.2017 13:57:46|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 13:59:12|Some users added
-Fatal|12.03.2017 13:59:12|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 14:00:01|Some users added
-Fatal|12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 14:03:34|Some users added
-Info|12.03.2017 14:03:35|Users was searched by predicate 
-Info|12.03.2017 14:03:36|Users deleted by predicate
-Info|12.03.2017 14:03:36|Users was searched by predicate 
-Info|12.03.2017 14:04:12|Some users added
-Info|12.03.2017 14:04:17|Users was searched by predicate 
-Info|12.03.2017 14:06:15|Some users added
-Info|12.03.2017 14:06:15|Users was searched by predicate 
-Info|12.03.2017 14:06:33|Some users added
-Info|12.03.2017 14:06:44|Users was searched by predicate 
-Info|12.03.2017 14:07:07|Some users added
-Info|12.03.2017 14:07:09|Users was searched by predicate 
-Info|12.03.2017 14:09:30|Some users added
-Info|12.03.2017 14:10:02|Users was searched by predicate 
-Info|12.03.2017 14:10:04|Users deleted by predicate
-Info|12.03.2017 14:10:06|Users was searched by predicate 
-Info|12.03.2017 14:11:00|Some users added
-Info|12.03.2017 14:11:00|Some users added
-Info|12.03.2017 14:11:01|Users was searched by predicate 
-Info|12.03.2017 14:15:41|Some users added
-Info|12.03.2017 14:15:41|Some users added
-Info|12.03.2017 14:15:41|Users was searched by predicate 
-Info|12.03.2017 14:15:50|Users deleted by predicate
-Info|12.03.2017 14:16:10|Some users added
-Info|12.03.2017 14:16:10|Some users added
-Info|12.03.2017 14:16:10|Users was searched by predicate 
-Info|12.03.2017 14:19:11|Some users added
-Info|12.03.2017 14:19:11|Some users added
-Info|12.03.2017 14:19:11|Users was searched by predicate 
-Info|12.03.2017 14:19:15|Users deleted by predicate
-Info|12.03.2017 14:19:23|Users was searched by predicate 
-Info|12.03.2017 14:20:32|Some users added
-Info|12.03.2017 14:20:32|Some users added
-Info|12.03.2017 14:20:32|Users was searched by predicate 
-Info|12.03.2017 14:20:34|Users deleted by predicate
-Info|12.03.2017 14:20:34|Users was searched by predicate 
-Info|12.03.2017 14:28:01|Some users added
-Info|12.03.2017 14:28:01|Users was searched by predicate 
-Info|12.03.2017 14:28:01|Users deleted by predicate
-Info|12.03.2017 14:29:52|Some users added
-Info|12.03.2017 14:30:06|Users was searched by predicate 
-Info|12.03.2017 14:30:07|Users deleted by predicate
-Info|12.03.2017 14:31:21|Some users added
-Info|12.03.2017 14:31:28|Users was searched by predicate 
-Info|12.03.2017 14:31:28|Users deleted by predicate
-Info|12.03.2017 14:31:50|Some users added
-Info|12.03.2017 14:31:50|Users was searched by predicate 
-Info|12.03.2017 14:34:49|Some users added
-Info|12.03.2017 14:34:49|Users was searched by predicate 
-Info|12.03.2017 14:36:00|Some users added
-Info|12.03.2017 14:36:00|Users was searched by predicate 
-Info|12.03.2017 14:38:27|Some users added
-Info|12.03.2017 14:38:28|Users was searched by predicate 
-Info|12.03.2017 14:38:28|Users deleted by predicate
-Info|12.03.2017 14:38:29|Users was searched by predicate 
-Info|12.03.2017 14:39:04|Some users added
-Info|12.03.2017 14:39:04|Users was searched by predicate 
-Info|12.03.2017 14:39:04|Users deleted by predicate
-Info|12.03.2017 14:39:05|Users was searched by predicate 
-Info|12.03.2017 14:39:15|Some users added
-Info|12.03.2017 14:39:15|Users was searched by predicate 
-Info|12.03.2017 14:39:15|Users deleted by predicate
-Info|12.03.2017 14:39:15|Users was searched by predicate 
-Info|12.03.2017 14:42:37|Some users added
-Info|12.03.2017 14:42:37|Users was searched by predicate 
-Info|12.03.2017 14:42:37|Users deleted by predicate
-Info|12.03.2017 14:42:37|Users was searched by predicate 
-Info|12.03.2017 15:41:42|Some users added
-Info|12.03.2017 15:41:42|Users was searched by predicate 
-Info|12.03.2017 15:41:42|Users deleted by predicate
-Info|12.03.2017 15:41:42|Users was searched by predicate 
-Info|12.03.2017 15:43:13|Some users added
-Info|12.03.2017 15:43:14|Users was searched by predicate 
-Info|12.03.2017 15:43:14|Users deleted by predicate
-Info|12.03.2017 15:43:14|Users was searched by predicate 
-Info|12.03.2017 15:43:53|Some users added
-Info|12.03.2017 15:43:54|Users was searched by predicate 
-Info|12.03.2017 15:43:54|Users deleted by predicate
-Info|12.03.2017 15:43:54|Users was searched by predicate 
-Fatal|12.03.2017 15:44:56|Value cannot be null. Parameter name: predicate
-Fatal|12.03.2017 15:44:59|Value cannot be null. Parameter name: predicate
-Info|12.03.2017 15:46:44|Some users added
-Info|12.03.2017 15:46:44|Users was searched by predicate 
-Info|12.03.2017 15:46:44|Users deleted by predicate
-Info|12.03.2017 15:46:44|Users was searched by predicate 
-Info|12.03.2017 15:48:06|Some users added
-Info|12.03.2017 15:48:06|Users was searched by predicate 
-Info|12.03.2017 15:48:06|Users deleted by predicate
-Info|12.03.2017 15:48:06|Users was searched by predicate 
-Info|12.03.2017 15:49:19|Some users added
-Info|12.03.2017 15:49:19|Users was searched by predicate 
-Info|12.03.2017 15:49:19|Users deleted by predicate
-Info|12.03.2017 15:49:19|Users was searched by predicate 
-Info|12.03.2017 15:49:48|Some users added
-Info|12.03.2017 15:49:49|Users was searched by predicate 
-Info|12.03.2017 15:49:49|Users deleted by predicate
-Info|12.03.2017 15:49:49|Users was searched by predicate 
-Info|12.03.2017 15:50:29|Some users added
-Info|12.03.2017 15:50:29|Users was searched by predicate 
-Info|12.03.2017 15:50:29|Users deleted by predicate
-Info|12.03.2017 15:50:29|Users was searched by predicate 
-Info|12.03.2017 15:50:53|Some users added
-Info|12.03.2017 15:50:54|Users was searched by predicate 
-Info|12.03.2017 15:50:54|Users deleted by predicate
-Info|12.03.2017 15:50:54|Users was searched by predicate 
-Info|12.03.2017 15:52:48|Some users added
-Info|12.03.2017 15:52:48|Users was searched by predicate 
-Info|12.03.2017 15:52:49|Users deleted by predicate
-Info|12.03.2017 15:52:49|Users was searched by predicate 
-Info|12.03.2017 15:53:45|Some users added
-Info|12.03.2017 15:53:46|Users was searched by predicate 
-Info|12.03.2017 15:53:46|Users deleted by predicate
-Info|12.03.2017 15:53:46|Users was searched by predicate 
-Info|12.03.2017 15:55:43|Some users added
-Info|12.03.2017 15:55:43|Users was searched by predicate 
-Info|12.03.2017 15:55:43|Users deleted by predicate
-Info|12.03.2017 15:55:43|Users was searched by predicate 
-Info|12.03.2017 15:57:41|Some users added
-Info|12.03.2017 15:57:41|Users was searched by predicate 
-Info|12.03.2017 15:57:41|Users deleted by predicate
-Info|12.03.2017 15:57:41|Users was searched by predicate 
-Info|12.03.2017 15:57:58|Some users added
-Info|12.03.2017 15:57:58|Users was searched by predicate 
-Info|12.03.2017 15:57:58|Users deleted by predicate
-Info|12.03.2017 15:57:58|Users was searched by predicate 
-Info|12.03.2017 15:58:30|Some users added
-Info|12.03.2017 15:58:30|Users was searched by predicate 
-Info|12.03.2017 15:58:30|Users deleted by predicate
-Info|12.03.2017 15:58:30|Users was searched by predicate 
-Info|12.03.2017 15:59:16|Some users added
-Info|12.03.2017 15:59:17|Users was searched by predicate 
-Info|12.03.2017 15:59:17|Users deleted by predicate
-Info|12.03.2017 15:59:17|Users was searched by predicate 
-Info|12.03.2017 16:00:52|Some users added
-Info|12.03.2017 16:00:53|Users was searched by predicate 
-Info|12.03.2017 16:00:53|Users deleted by predicate
-Info|12.03.2017 16:01:54|Some users added
-Info|12.03.2017 16:01:54|Users was searched by predicate 
-Info|12.03.2017 16:01:54|Users deleted by predicate
-Info|12.03.2017 16:01:54|Users was searched by predicate 
-Info|12.03.2017 16:02:44|Some users added
-Info|12.03.2017 16:02:44|Users was searched by predicate 
-Info|12.03.2017 16:02:44|Users deleted by predicate
-Info|12.03.2017 16:02:44|Users was searched by predicate 
-Info|12.03.2017 16:07:58|Some users added
-Info|12.03.2017 16:07:58|Users was searched by predicate 
-Info|12.03.2017 16:08:13|Some users added
-Info|12.03.2017 16:08:13|Users was searched by predicate 
-Info|12.03.2017 16:09:02|Some users added
-Info|12.03.2017 16:09:09|Users was searched by predicate 
-Error|12.03.2017 16:10:16|No MyId
-Info|12.03.2017 16:11:12|Users was searched by predicate 
-Info|12.03.2017 16:11:26|Users was searched by predicate 
-Info|12.03.2017 16:11:36|Users was searched by predicate 
-Info|12.03.2017 16:11:51|Users was searched by predicate 
-Info|12.03.2017 16:11:57|Users was searched by predicate 
-Info|12.03.2017 16:19:01|Some users added
-Info|12.03.2017 16:19:01|Users was searched by predicate 
-Info|12.03.2017 16:19:01|Some users added
-Info|12.03.2017 16:19:13|Some users added
-Info|12.03.2017 16:19:13|Users was searched by predicate 
-Info|12.03.2017 16:19:13|Some users added
-Info|12.03.2017 16:19:38|Some users added
-Info|12.03.2017 16:19:41|Users was searched by predicate 
-Info|12.03.2017 16:19:44|Some users added
-Info|12.03.2017 16:19:59|Some users added
-Info|12.03.2017 16:19:59|Users was searched by predicate 
-Info|12.03.2017 16:19:59|Some users added
-Info|12.03.2017 16:20:00|Users was searched by predicate 
-Info|12.03.2017 16:20:02|Users was searched by predicate 
-Info|12.03.2017 16:20:03|Users was searched by predicate 
-Info|12.03.2017 16:20:05|Users deleted by predicate
-Info|12.03.2017 16:20:05|Users was searched by predicate 
-Info|12.03.2017 16:21:38|Some users added
-Info|12.03.2017 16:21:38|Users was searched by predicate 
-Info|12.03.2017 16:21:38|Some users added
-Info|12.03.2017 16:21:42|Some users added
-Info|12.03.2017 16:21:42|Users was searched by predicate 
-Info|12.03.2017 16:21:42|Some users added
-Info|12.03.2017 16:21:46|Users was searched by predicate 
-Info|12.03.2017 16:21:47|Users was searched by predicate 
-Info|12.03.2017 16:21:47|Users was searched by predicate 
-Info|12.03.2017 16:21:48|Users was searched by predicate 
-Info|12.03.2017 16:21:48|Users was searched by predicate 
-Info|12.03.2017 16:21:49|Users was searched by predicate 
-Info|12.03.2017 16:21:49|Users was searched by predicate 
-Info|12.03.2017 16:21:49|Users was searched by predicate 
-Info|12.03.2017 16:21:49|Users was searched by predicate 
-Info|12.03.2017 16:21:50|Users was searched by predicate 
-Info|12.03.2017 16:21:50|Users was searched by predicate 
-Info|12.03.2017 16:21:51|Users was searched by predicate 
-Info|12.03.2017 16:21:52|Users was searched by predicate 
-Info|12.03.2017 16:21:52|Users was searched by predicate 
-Info|12.03.2017 16:21:53|Users was searched by predicate 
-Info|12.03.2017 16:21:53|Users was searched by predicate 
-Info|12.03.2017 16:21:53|Users was searched by predicate 
-Info|12.03.2017 16:22:02|Users was searched by predicate 
-Info|12.03.2017 16:22:02|Users was searched by predicate 
-Info|12.03.2017 16:22:03|Users was searched by predicate 
-Info|12.03.2017 16:22:03|Users was searched by predicate 
-Info|12.03.2017 16:22:05|Users deleted by predicate
-Info|12.03.2017 16:22:05|Users was searched by predicate 
-Info|12.03.2017 16:22:07|Users was searched by predicate 
-Info|12.03.2017 16:22:07|Users was searched by predicate 
-Info|12.03.2017 16:22:08|Users was searched by predicate 
-Info|12.03.2017 16:22:09|Users was searched by predicate 
-Info|12.03.2017 16:22:10|Users was searched by predicate 
-Info|12.03.2017 16:22:20|Users was searched by predicate 
-Info|12.03.2017 16:22:20|Users was searched by predicate 
-Info|12.03.2017 16:22:20|Users was searched by predicate 
-Info|12.03.2017 16:22:21|Users was searched by predicate 
-Info|12.03.2017 16:22:21|Users was searched by predicate 
-Info|12.03.2017 16:22:21|Users was searched by predicate 
-Info|12.03.2017 16:22:21|Users was searched by predicate 
-Info|12.03.2017 16:22:22|Users was searched by predicate 
-Info|12.03.2017 16:22:22|Users was searched by predicate 
-Info|12.03.2017 16:22:22|Users was searched by predicate 
-Info|12.03.2017 16:22:22|Users was searched by predicate 
-Info|12.03.2017 16:22:22|Users was searched by predicate 
-Info|12.03.2017 16:22:23|Users was searched by predicate 
-Info|12.03.2017 16:22:23|Users was searched by predicate 
-Info|12.03.2017 16:22:23|Users was searched by predicate 
-Info|12.03.2017 16:22:23|Users was searched by predicate 
-Info|12.03.2017 16:22:23|Users was searched by predicate 
-Info|12.03.2017 16:22:24|Users was searched by predicate 
-Info|12.03.2017 16:22:24|Users was searched by predicate 
-Info|12.03.2017 16:22:24|Users was searched by predicate 
-Info|12.03.2017 16:22:24|Users was searched by predicate 
-Info|12.03.2017 16:22:24|Users was searched by predicate 
-Info|12.03.2017 16:22:25|Users was searched by predicate 
-Info|12.03.2017 16:22:25|Users was searched by predicate 
-Info|12.03.2017 16:22:25|Users was searched by predicate 
-Info|12.03.2017 16:22:25|Users was searched by predicate 
-Info|12.03.2017 16:22:25|Users was searched by predicate 
-Info|12.03.2017 16:22:26|Users was searched by predicate 
-Info|12.03.2017 16:23:35|Some users added
-Info|12.03.2017 16:23:35|Users was searched by predicate 
-Info|12.03.2017 16:23:35|Some users added
-Info|12.03.2017 16:25:19|Some users added
-Info|12.03.2017 16:25:19|Users was searched by predicate 
-Info|12.03.2017 16:25:28|Some users added
-Info|12.03.2017 16:25:28|Users was searched by predicate 
-Info|12.03.2017 16:25:33|Users deleted by predicate
-Info|12.03.2017 16:25:33|Users was searched by predicate 
-Info|12.03.2017 16:26:04|Users was searched by predicate 
-Info|12.03.2017 16:26:04|Users was searched by predicate 
-Info|12.03.2017 16:26:04|Users was searched by predicate 
-Info|12.03.2017 16:26:19|Some users added
-Info|12.03.2017 16:26:19|Users was searched by predicate 
-Info|12.03.2017 16:27:37|Users deleted by predicate
-Info|12.03.2017 16:27:37|Users was searched by predicate 
-Info|12.03.2017 16:27:40|Some users added
-Info|12.03.2017 16:27:40|Users was searched by predicate 
-Info|12.03.2017 16:27:40|Users was searched by predicate 
-Info|12.03.2017 16:27:41|Users was searched by predicate 
-Info|12.03.2017 16:27:44|Users deleted by predicate
-Info|12.03.2017 16:27:52|Users was searched by predicate 
-Info|12.03.2017 16:27:54|Users was searched by predicate 
-Info|12.03.2017 16:27:54|Users was searched by predicate 
-Info|12.03.2017 16:27:54|Users was searched by predicate 
-Info|12.03.2017 16:28:06|Some users added
-Info|12.03.2017 16:28:06|Users was searched by predicate 
-Info|12.03.2017 16:28:21|Some users added
-Info|12.03.2017 16:28:21|Users was searched by predicate 
-Info|12.03.2017 16:28:31|Users deleted by predicate
-Info|12.03.2017 16:28:31|Users was searched by predicate 
-Info|12.03.2017 16:29:42|Some users added
-Info|12.03.2017 16:29:42|Users was searched by predicate 
-Info|12.03.2017 16:29:52|Some users added
-Info|12.03.2017 16:29:52|Users was searched by predicate 
-Info|12.03.2017 16:30:07|Users deleted by predicate
-Info|12.03.2017 16:31:41|Some users added
-Info|12.03.2017 16:31:41|Users was searched by predicate 
-Info|12.03.2017 16:31:46|Some users added
-Info|12.03.2017 16:31:46|Users was searched by predicate 
-Info|12.03.2017 16:31:51|Users deleted by predicate
-Info|12.03.2017 16:31:51|Users was searched by predicate 
-Info|12.03.2017 17:03:30|Some users added
-Info|12.03.2017 17:03:30|Users was searched by predicate 
-Info|12.03.2017 17:03:36|Users was searched by predicate 
-Info|12.03.2017 17:03:36|Users was searched by predicate 
-Info|12.03.2017 17:03:36|Users was searched by predicate 
-Info|12.03.2017 17:03:37|Some users added
-Info|12.03.2017 17:03:37|Users was searched by predicate 
-Info|12.03.2017 17:03:41|Users deleted by predicate
-Info|12.03.2017 17:03:41|Users was searched by predicate 
-Info|12.03.2017 17:03:55|Some users added
-Info|12.03.2017 17:03:55|Users was searched by predicate 
-Info|12.03.2017 17:04:14|Some users added
-Info|12.03.2017 17:04:14|Users was searched by predicate 
-Info|12.03.2017 17:04:29|Some users added
-Info|12.03.2017 17:04:29|Users was searched by predicate 
-Info|12.03.2017 17:04:33|Users deleted by predicate
-Info|12.03.2017 17:04:33|Users was searched by predicate 
-Info|12.03.2017 17:16:46|Some users added
-Info|12.03.2017 17:16:46|Users was searched by predicate 
-Info|12.03.2017 17:16:59|Users was searched by predicate 
-Info|12.03.2017 17:17:00|Users was searched by predicate 
-Info|12.03.2017 17:17:00|Users was searched by predicate 
-Info|12.03.2017 17:17:00|Users was searched by predicate 
-Info|12.03.2017 17:17:23|Some users added
-Info|12.03.2017 17:17:23|Users was searched by predicate 
-Info|12.03.2017 17:18:49|Some users added
-Info|12.03.2017 17:18:49|Users was searched by predicate 
-Info|12.03.2017 17:19:01|Users was searched by predicate 
-Info|12.03.2017 17:19:01|Users was searched by predicate 
-Info|12.03.2017 17:19:01|Users was searched by predicate 
-Info|12.03.2017 17:19:01|Users was searched by predicate 
-Info|12.03.2017 17:19:02|Users was searched by predicate 
-Info|12.03.2017 17:19:04|Some users added
-Info|12.03.2017 17:19:04|Users was searched by predicate 
-Info|12.03.2017 17:19:04|Users was searched by predicate 
-Info|12.03.2017 17:19:09|Users deleted by predicate
-Info|12.03.2017 17:19:09|Users was searched by predicate 
-Info|12.03.2017 17:19:22|Users deleted by predicate
-Info|12.03.2017 17:19:22|Users was searched by predicate 
-Info|12.03.2017 17:19:38|Some users added
-Info|12.03.2017 17:19:38|Users was searched by predicate 
-Info|12.03.2017 17:19:45|Some users added
-Info|12.03.2017 17:19:45|Users was searched by predicate 
-Info|12.03.2017 17:19:48|Users deleted by predicate
-Info|12.03.2017 17:19:48|Users was searched by predicate 
-Info|12.03.2017 17:20:49|Some users added
-Info|12.03.2017 17:20:49|Users was searched by predicate 
-Info|12.03.2017 17:20:54|Some users added
-Info|12.03.2017 17:20:54|Users was searched by predicate 
-Info|12.03.2017 17:20:58|Users deleted by predicate
-Info|12.03.2017 17:20:58|Users was searched by predicate 
-Info|12.03.2017 17:21:24|Some users added
-Info|12.03.2017 17:21:24|Users was searched by predicate 
-Info|12.03.2017 17:21:26|Users deleted by predicate
-Info|12.03.2017 17:21:26|Users was searched by predicate 
-Info|12.03.2017 17:21:39|Some users added
-Info|12.03.2017 17:21:39|Users was searched by predicate 
-Info|12.03.2017 17:22:39|Some users added
-Info|12.03.2017 17:22:39|Users was searched by predicate 
-Info|12.03.2017 17:25:09|Some users added
-Info|12.03.2017 17:25:09|Users was searched by predicate 
-Info|12.03.2017 17:25:43|Some users added
-Info|12.03.2017 17:25:43|Users was searched by predicate 
-Info|12.03.2017 17:25:47|Users deleted by predicate
-Info|12.03.2017 17:25:47|Users was searched by predicate 
-Info|12.03.2017 17:25:52|Some users added
-Info|12.03.2017 17:25:52|Users was searched by predicate 
-Info|12.03.2017 17:26:29|Some users added
-Info|12.03.2017 17:26:29|Users was searched by predicate 
-Info|12.03.2017 17:27:38|Some users added
-Info|12.03.2017 17:27:38|Users was searched by predicate 
+Info|16.03.2017 15:16:29|Method Add
+Info|16.03.2017 15:16:29|Method Search
+Info|16.03.2017 15:17:01|Method Add
+Info|16.03.2017 15:17:01|Method Search
+Info|16.03.2017 15:17:21|Method AddOrRemoveSlave
+Arguments:
+ Byte[] Arg0 = System.Byte[]
+Info|16.03.2017 15:17:21|Method AddOrRemoveSlave
+Arguments:
+ Byte[] Arg0 = System.Byte[]
+Info|16.03.2017 15:17:57|Method AddOrRemoveSlave
+Arguments:
+ Byte[] Arg0 = System.Byte[]
+Info|16.03.2017 15:17:57|Method AddOrRemoveSlave
+Arguments:
+ Byte[] Arg0 = System.Byte[]
+Info|16.03.2017 15:18:35|Method AddOrRemoveSlave
+Arguments:
+ Byte[] Arg0 = System.Byte[]
+Fatal|16.03.2017 15:18:38|System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:7486
+   в System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   в System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   в MyServiceLibrary.Implementation.UserTcpService.SendMessageFromSocket(IPEndPoint ipEndPoint, Byte[] data) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 210
+   в MyServiceLibrary.Implementation.UserTcpService.AddOrRemoveSlave(Byte[] data) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 264
+Info|16.03.2017 15:19:10|Method Add
+Info|16.03.2017 15:19:11|Method Search
+Info|16.03.2017 15:19:15|Method AddOrRemoveSlave
+Info|16.03.2017 15:19:15|Method AddOrRemoveSlave
+Info|16.03.2017 15:19:23|Method Search
+Info|16.03.2017 15:53:55|Method Add
+Info|16.03.2017 15:53:56|Method Search
+Info|16.03.2017 15:54:39|Method Search
+Info|16.03.2017 15:54:53|Method Search
+Info|16.03.2017 15:54:53|Method Add
+Info|16.03.2017 15:54:53|Method Search
+Info|16.03.2017 15:54:54|Method Search
+Info|16.03.2017 15:54:54|Method Search
+Info|16.03.2017 15:54:54|Method Search
+Info|16.03.2017 15:54:54|Method Search
+Info|16.03.2017 16:03:28|Method Search
+Info|16.03.2017 16:03:28|Method Add
+Info|16.03.2017 16:03:28|Method SerializeState
+Fatal|16.03.2017 16:03:28|System.NotSupportedException: Невозможно сериализовать интерфейс MyServiceLibrary.InterfacesAndAbstract.IService`1[[MyServiceLibrary.Implementation.User, MyServiceLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+   в System.Xml.Serialization.TypeDesc.CheckSupported()
+   в System.Xml.Serialization.TypeScope.GetTypeDesc(Type type, MemberInfo source, Boolean directReference, Boolean throwOnError)
+   в System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
+   в System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type type, RecursionLimiter limiter)
+   в System.Xml.Serialization.XmlSerializer..ctor(Type type, XmlAttributeOverrides overrides, Type[] extraTypes, XmlRootAttribute root, String defaultNamespace, String location, Evidence evidence)
+   в System.Xml.Serialization.XmlSerializer..ctor(Type type, Type[] extraTypes)
+   в MyServiceLibrary.Implementation.XmlSerializeProvider`1.Serialize(String fileName, T obj) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\XmlSerializeProvider.cs:строка 23
+   в MyServiceLibrary.Implementation.UserService.SerializeState(ISerializerProvider`1 serializer) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserService.cs:строка 150
+   в MyServiceLibrary.Implementation.UserTcpService.SerializeState(ISerializerProvider`1 serializer) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 126
+Info|16.03.2017 16:07:17|Method Search
+Info|16.03.2017 16:07:22|Method Search
+Info|16.03.2017 16:07:22|Method Search
+Info|16.03.2017 16:07:22|Method Search
+Info|16.03.2017 16:07:22|Method Search
+Info|16.03.2017 16:07:22|Method Search

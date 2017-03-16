@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using LoggerSingleton;
-using MyServiceLibrary.Interfaces;
+using MyServiceLibrary.InterfacesAndAbstract;
 using System.Reflection;
 using System.Net;
 using System.Globalization;
@@ -17,8 +17,9 @@ namespace MyServiceLibrary.Implementation
     /// <summary>
     /// Server of user service
     /// </summary>
-    public class MasterSlaveService<T> : IMasterSlaveService<IService<User>>, IDisposable
-           where T : IService<User>
+    public class MasterSlavesService<ItemType,TcpServiceType,ItemServiceType> : IMasterSlaveService<TcpService<ItemType>>, IDisposable
+        where TcpServiceType : TcpService<ItemType>
+        where ItemServiceType : IService<ItemType>
     {
         #region Private Fields
         private bool disposed = false;
@@ -38,6 +39,9 @@ namespace MyServiceLibrary.Implementation
 
         private List<AppDomain> slavesDomians = new List<AppDomain>();
 
+        private TcpService<ItemType> master;
+        private IEnumerable<TcpService<ItemType>> slaves; 
+
         #endregion
 
         #region Public Methods
@@ -46,20 +50,12 @@ namespace MyServiceLibrary.Implementation
         /// <summary>
         /// Default constructor
         /// </summary>
-        public MasterSlaveService()
+        public MasterSlavesService()
         {
-            var master = (IPEndPoint)RegisterServicesConfig.GetConfig().Master[0];
             if (!TryPermission("slave"))
             {
-                this.Master = (T)this.masterDomain.CreateInstanceAndUnwrap(
-                                                                            Assembly.GetExecutingAssembly().FullName,
-                                                                            typeof(UserService).FullName,
-                                                                            false,
-                                                                            BindingFlags.Default,
-                                                                            null,
-                                                                            new object[] { ServiceRoles.Master, master },
-                                                                            CultureInfo.CurrentCulture,
-                                                                            null);
+                var master = (IPEndPoint)RegisterServicesConfig.GetConfig().Master[0];
+                this.master = CreateTcpServiceInstanceInDomain(this.masterDomain, master, ServiceRoles.Master);
             }
             if (!TryPermission("master"))
             {
@@ -68,10 +64,10 @@ namespace MyServiceLibrary.Implementation
         }
 
         /// <summary>
-        /// Constructor with entering\ id generator
+        /// Constructor with entering id generator
         /// </summary>
         /// <param name="idGenerator">Identifier generator</param>
-        public MasterSlaveService(Func<int> idGenerator)
+        public MasterSlavesService(IIdGenerator idGenerator)
         {
             if (!TryPermission("slave"))
             {
@@ -80,16 +76,8 @@ namespace MyServiceLibrary.Implementation
                     NlogLogger.Logger.Fatal($"Value cannot be null. Parameter name: {nameof(idGenerator)}");
                     throw new ArgumentNullException(nameof(idGenerator));
                 }
-
-                this.Master = (T)this.masterDomain.CreateInstanceAndUnwrap(
-                                                                            Assembly.GetExecutingAssembly().FullName,
-                                                                            typeof(T).FullName,
-                                                                            false,
-                                                                            BindingFlags.Default,
-                                                                            null,
-                                                                            new object[] { idGenerator, (IPEndPoint)RegisterServicesConfig.GetConfig().Master[0], ServiceRoles.Master },
-                                                                            CultureInfo.CurrentCulture,
-                                                                            null);
+                var master = (IPEndPoint)RegisterServicesConfig.GetConfig().Master[0];
+                this.master = CreateTcpServiceInstanceInDomain(this.masterDomain, master, ServiceRoles.Master);
             }
             if (!TryPermission("master"))
             {
@@ -102,7 +90,7 @@ namespace MyServiceLibrary.Implementation
         /// </summary>
         /// <param name="idGenerator">Identifier generator</param>
         /// <param name="serializerProvider">Serialization provider</param>
-        public MasterSlaveService(Func<int> idGenerator, ISerializerProvider<User[]> serializerProvider) : this(idGenerator)
+        public MasterSlavesService(IIdGenerator idGenerator, ISerializerProvider<ItemType[]> serializerProvider) : this(idGenerator)
         {
             if (!TryPermission("slave"))
             {
@@ -114,7 +102,7 @@ namespace MyServiceLibrary.Implementation
         /// Constructor with entering serializer
         /// </summary>
         /// <param name="serializerProvider">Serialization provider</param>
-        public MasterSlaveService(ISerializerProvider<User[]> serializerProvider) : this()
+        public MasterSlavesService(ISerializerProvider<ItemType[]> serializerProvider) : this()
         {
             if (!TryPermission("slave"))
             {
@@ -124,15 +112,7 @@ namespace MyServiceLibrary.Implementation
 
         #endregion
 
-        /// <summary>
-        /// Property returns all slaves
-        /// </summary>
-        public IService<User> Master { get; private set; }
-
-        /// <summary>
-        /// Property returns master entity
-        /// </summary>
-        public IEnumerable<IService<User>> Slaves { get; private set; }
+        
 
         /// <summary>
         /// Method unload all domains
@@ -142,6 +122,34 @@ namespace MyServiceLibrary.Implementation
             Dispose(true);
         }
 
+        #endregion
+
+        #region Public Fields 
+        /// <summary>
+        /// Property returns all slaves
+        /// </summary>
+        public TcpService<ItemType> Master
+        {
+            get
+            {
+                if (master == null)
+                    throw new InvalidApplicationMode("Application mode is slave. To get access to mater change it to master or server");
+                return master;
+            }
+        }
+
+        /// <summary>
+        /// Property returns master entity
+        /// </summary>
+        public IEnumerable<TcpService<ItemType>> Slaves
+        {
+            get
+            {
+                if (slaves == null)
+                    throw new InvalidApplicationMode("Application mode is master. To get access to slaves change it to slaves or server");
+                return slaves;
+            }
+        }
         #endregion
 
         #region Protected Method
@@ -159,18 +167,18 @@ namespace MyServiceLibrary.Implementation
                     GC.SuppressFinalize(this);
                 }
 
-                if (this.Slaves != null)
+                if (this.slaves != null)
                 {
 
-                    foreach (var service in this.Slaves)
+                    foreach (var service in this.slaves)
                     {
                         service.Dispose();
                     }
                 }
 
-                if (this.Master != null)
+                if (this.master != null)
                 {
-                    this.Master.Dispose();
+                    this.master.Dispose();
                 }
 
                 foreach (AppDomain slaveDom in this.slavesDomians)
@@ -191,7 +199,7 @@ namespace MyServiceLibrary.Implementation
 
             Slaves slavesConfig = RegisterServicesConfig.GetConfig().Slaves;
 
-            List<IService<User>> slaves = new List<IService<User>>();
+            List<TcpService<ItemType>> slaves = new List<TcpService<ItemType>>();
             if (serviceMode == "server")
             {
 
@@ -209,14 +217,7 @@ namespace MyServiceLibrary.Implementation
                                                                  }));
                     var master = (IPEndPoint)RegisterServicesConfig.GetConfig().Master[0];
                     IPEndPoint endPoint = (IPEndPoint)service;
-                    slaves.Add((T)this.slavesDomians.Last().CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly().FullName,
-                                                                            typeof(UserService).FullName,
-                                                                            false,
-                                                                            BindingFlags.Default,
-                                                                            null,
-                                                                            new object[] { ServiceRoles.Slave, endPoint },
-                                                                            CultureInfo.CurrentCulture,
-                                                                            null));
+                    slaves.Add(CreateTcpServiceInstanceInDomain(slavesDomians.Last(), endPoint, ServiceRoles.Slave));
                 }
 
             }
@@ -232,31 +233,24 @@ namespace MyServiceLibrary.Implementation
                                                                                                    AppDomain.CurrentDomain.BaseDirectory,
                                                                                                    $"MyDomianForSlave{slavesDomians.Count}")
                                                                  }));
-                slaves.Add((T)this.slavesDomians[0].CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly().FullName,
-                                                                            typeof(UserService).FullName,
-                                                                            false,
-                                                                            BindingFlags.Default,
-                                                                            null,
-                                                                            new object[] { ServiceRoles.Slave, (IPEndPoint)slavesConfig[0] },
-                                                                            CultureInfo.CurrentCulture,
-                                                                            null));
+                slaves.Add(CreateTcpServiceInstanceInDomain(slavesDomians[0], (IPEndPoint)slavesConfig[0],ServiceRoles.Slave));
             }
 
-            this.Slaves = slaves;
+            this.slaves = slaves;
 
         }
 
-        private void InitializeCollection(ISerializerProvider<User[]> serializerProvider)
+        private void InitializeCollection(ISerializerProvider<ItemType[]> serializerProvider)
         {
 
             string fileName = GetValueFromConfig.Get("FileName");
 
-            User[] users = serializerProvider.Deserialize(fileName, null);
+            ItemType[] users = serializerProvider.Deserialize(fileName, null);
             if (users != null)
             {
-                foreach (User us in users)
+                foreach (ItemType us in users)
                 {
-                    this.Master.Add(us);
+                    this.master.Add(us);
                 }
             }
         }
@@ -275,6 +269,27 @@ namespace MyServiceLibrary.Implementation
             throw new AccesPermissionException();
         }
 
+        private TcpService<ItemType> CreateTcpServiceInstanceInDomain(AppDomain domain, IPEndPoint seviceEndPoint, params object[] serviceParams)
+        {
+            IService<ItemType> service = (IService<ItemType>)domain.CreateInstanceAndUnwrap(
+                                                                           Assembly.GetExecutingAssembly().FullName,
+                                                                           typeof(ItemServiceType).FullName,
+                                                                           false,
+                                                                           BindingFlags.Default,
+                                                                           null,
+                                                                           serviceParams,
+                                                                           CultureInfo.CurrentCulture,
+                                                                           null);
+            return (TcpService<ItemType>)domain.CreateInstanceAndUnwrap(
+                                                                        Assembly.GetExecutingAssembly().FullName,
+                                                                        typeof(TcpServiceType).FullName,
+                                                                        false,
+                                                                        BindingFlags.Default,
+                                                                        null,
+                                                                        new object[] { service, seviceEndPoint },
+                                                                        CultureInfo.CurrentCulture,
+                                                                        null);
+        }
 
         #endregion
 
@@ -283,7 +298,7 @@ namespace MyServiceLibrary.Implementation
         /// <summary>
         /// Finilazire for server
         /// </summary>
-        ~MasterSlaveService()
+        ~MasterSlavesService()
         {
             Dispose(false);
         }

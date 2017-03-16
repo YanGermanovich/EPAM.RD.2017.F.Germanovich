@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using MyServiceLibrary.Interfaces;
+using MyServiceLibrary.InterfacesAndAbstract;
 
 namespace MyServiceLibrary.Implementation
 {

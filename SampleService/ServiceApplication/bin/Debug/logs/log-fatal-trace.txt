@@ -23,3 +23,18 @@
 12.03.2017 14:00:01|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
 12.03.2017 15:44:56|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
 12.03.2017 15:44:59|Value cannot be null. Parameter name: predicate|UserService.Listen => UserService.UpdateUsers => UserService.DeleteHelper
+16.03.2017 15:18:38|System.Net.Sockets.SocketException (0x80004005): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение 127.0.0.1:7486
+   в System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   в System.Net.Sockets.Socket.Connect(EndPoint remoteEP)
+   в MyServiceLibrary.Implementation.UserTcpService.SendMessageFromSocket(IPEndPoint ipEndPoint, Byte[] data) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 210
+   в MyServiceLibrary.Implementation.UserTcpService.AddOrRemoveSlave(Byte[] data) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 264|UserTcpService.Listen => UserTcpService.AddOrRemoveSlave => LoggingWithArgsAttribute.OnException
+16.03.2017 16:03:28|System.NotSupportedException: Невозможно сериализовать интерфейс MyServiceLibrary.InterfacesAndAbstract.IService`1[[MyServiceLibrary.Implementation.User, MyServiceLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]].
+   в System.Xml.Serialization.TypeDesc.CheckSupported()
+   в System.Xml.Serialization.TypeScope.GetTypeDesc(Type type, MemberInfo source, Boolean directReference, Boolean throwOnError)
+   в System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
+   в System.Xml.Serialization.XmlReflectionImporter.IncludeType(Type type, RecursionLimiter limiter)
+   в System.Xml.Serialization.XmlSerializer..ctor(Type type, XmlAttributeOverrides overrides, Type[] extraTypes, XmlRootAttribute root, String defaultNamespace, String location, Evidence evidence)
+   в System.Xml.Serialization.XmlSerializer..ctor(Type type, Type[] extraTypes)
+   в MyServiceLibrary.Implementation.XmlSerializeProvider`1.Serialize(String fileName, T obj) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\XmlSerializeProvider.cs:строка 23
+   в MyServiceLibrary.Implementation.UserService.SerializeState(ISerializerProvider`1 serializer) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserService.cs:строка 150
+   в MyServiceLibrary.Implementation.UserTcpService.SerializeState(ISerializerProvider`1 serializer) в C:\Users\mrnic\Source\Repos\EPAM.RD.2017.F.Germanovich\SampleService\MyServiceLibrary\Implementation\UserTcpService.cs:строка 126|UserTcpService.SerializeState => LoggingAttribute.OnException
